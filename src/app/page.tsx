@@ -1,101 +1,287 @@
+import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
+import projects from "@/data/projects.json";
+import clientsData from "@/data/clients.json";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const featuredProjects = projects.slice(0, 6);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      {/* 8.1 Hero Section */}
+      <section className="relative w-full h-[80vh] min-h-[600px] flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-[url('/images/hero-bg-uploaded.jpg')] bg-cover bg-center z-0"></div>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-brand-navy/60 z-10"></div>
+
+        <div className="relative z-20 max-w-4xl mx-auto space-y-6">
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-white">
+            We are <span className="text-brand-sky">R Colors</span> Group
+          </h1>
+          <p className="text-lg md:text-2xl text-gray-200 font-light leading-relaxed">
+            A trusted name in construction, contracting, and infrastructure development — delivering residential, commercial, and industrial projects with quality, precision, and commitment.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
+            <Link href="#divisions" className="bg-brand-sky text-white px-8 py-4 rounded font-bold hover:bg-white hover:text-brand-sky transition-colors w-full sm:w-auto text-lg shadow-lg">
+              Explore Our Divisions
+            </Link>
+            <Link href="/projects" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded font-bold hover:bg-white hover:text-brand-navy transition-colors w-full sm:w-auto text-lg">
+              View Projects
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Angled Divider */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+          <svg className="relative block w-full h-12 md:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 120L0 120 0 0 1200 120z" className="fill-brand-sky"></path>
+          </svg>
+        </div>
+      </section>
+
+      {/* 8.2 CTA Strip */}
+      <section className="w-full bg-brand-sky text-white py-8 px-4 relative z-30 -mt-1 shadow-md">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-0">
+            We provide fast and affordable service for your projects. Hire us!
+          </h2>
+          <Link href="/contact" className="bg-brand-navy text-white px-8 py-3 rounded font-bold hover:bg-white hover:text-brand-navy transition-colors flex items-center space-x-2 shadow-lg">
+            <span>Get the Quote</span>
+            <ArrowRight size={20} />
+          </Link>
+        </div>
+      </section>
+
+      {/* 8.4 & 8.5 Welcome & About Us */}
+      <section className="w-full py-20 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-brand-sky/10 transform rotate-3 rounded-3xl -z-10"></div>
+            <Image src="/images/R Colors Company Profile Final (2)_page-0002.jpg" width={600} height={400} alt="About R Colors Group" className="rounded-2xl shadow-2xl object-cover" />
+          </div>
+          <div className="space-y-6">
+            <h4 className="text-brand-sky font-bold uppercase tracking-wider">Welcome To Our Business</h4>
+            <h2 className="text-4xl font-heading font-black text-brand-navy">Building Strong Foundations</h2>
+            <p className="text-gray-600 leading-relaxed text-lg">
+              R Colors Group of Companies is a trusted name in construction, contracting, and infrastructure development. We deliver residential, commercial, and industrial projects with quality, precision, and commitment. Our focus is on timely execution, safety standards, and long-term value creation.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-lg">
+              We combine expertise, innovation, and skilled workmanship to transform ideas into reality. Every project reflects our dedication to excellence, integrity, and client satisfaction.
+            </p>
+
+            <blockquote className="border-l-4 border-brand-sky pl-6 py-2 my-8 bg-gray-50 rounded-r-lg shadow-sm">
+              <p className="text-xl italic font-heading text-brand-navy">
+                &quot;At R Colors Group of Companies, we believe in building more than structures — we build trust, long-term relationships, and spaces that reflect quality, strength, and modern development.&quot;
+              </p>
+            </blockquote>
+
+            <Link href="/about" className="inline-flex items-center space-x-2 text-brand-sky font-bold hover:text-brand-navy transition-colors">
+              <span>Read More About Us</span>
+              <ChevronRight size={20} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8.3 Three Divisions Strip */}
+      <section id="divisions" className="w-full py-20 bg-gray-50 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-heading font-black text-brand-navy mb-4">OUR DIVISIONS</h2>
+            <div className="w-24 h-1 bg-brand-sky mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Division 1 */}
+            <Link href="/divisions/construction" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="h-64 relative bg-brand-navy/10 overflow-hidden">
+                <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
+                {/* Fallback pattern bg */}
+                <div className="absolute inset-0 bg-[url('/images/Rcolors2.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
+              </div>
+              <div className="p-8 text-center flex-grow flex flex-col justify-center">
+                <div className="relative h-24 w-full mx-auto mb-3">
+                  <Image src="/images/logo2.jpg" alt="R Colors Construction & Developers" fill className="object-contain" />
+                </div>
+                <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Building & Development</p>
+              </div>
+            </Link>
+
+            {/* Division 2 */}
+            <Link href="/divisions/r-colors" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="h-64 relative bg-brand-navy/10 overflow-hidden">
+                <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
+                <div className="absolute inset-0 bg-[url('/images/Rcolors1.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
+              </div>
+              <div className="p-8 text-center flex-grow flex flex-col justify-center">
+                <div className="relative h-24 w-full mx-auto mb-3">
+                  <Image src="/images/logo.jpg" alt="R Colors" fill className="object-contain" />
+                </div>
+                <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Finishing Works</p>
+              </div>
+            </Link>
+
+            {/* Division 3 */}
+            <Link href="/divisions/infratech" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="h-64 relative bg-brand-navy/10 overflow-hidden">
+                <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
+                <div className="absolute inset-0 bg-[url('/images/Rcolors3.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
+              </div>
+              <div className="p-8 text-center flex-grow flex flex-col justify-center">
+                <div className="relative h-24 w-full mx-auto mb-3">
+                  <Image src="/images/logo3.jpg" alt="R Colors Infratech" fill className="object-contain" />
+                </div>
+                <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Real Estate & Sales Purchase</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8.8 & 8.9 Core Values & Why Choose Us Summary */}
+      <section id="why-us" className="w-full py-20 bg-brand-navy text-white px-4 relative overflow-hidden">
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-sky/10 transform skew-x-12 translate-x-1/4"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Why Choose Us</h4>
+            <h2 className="text-4xl font-heading font-black mb-12">Commitment To Excellence</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="flex flex-col space-y-3">
+                <CheckCircle className="text-brand-sky" size={32} />
+                <h3 className="font-bold text-xl">On-Time Delivery</h3>
+                <p className="text-gray-300">Every project is planned and executed efficiently to ensure completion within committed timelines.</p>
+              </div>
+              <div className="flex flex-col space-y-3">
+                <CheckCircle className="text-brand-sky" size={32} />
+                <h3 className="font-bold text-xl">Quality Craftsmanship</h3>
+                <p className="text-gray-300">Our skilled team ensures high standards of workmanship with careful attention to every detail.</p>
+              </div>
+              <div className="flex flex-col space-y-3">
+                <CheckCircle className="text-brand-sky" size={32} />
+                <h3 className="font-bold text-xl">Client-Focused Approach</h3>
+                <p className="text-gray-300">We work closely with clients to understand their needs and deliver customized construction solutions.</p>
+              </div>
+              <div className="flex flex-col space-y-3">
+                <CheckCircle className="text-brand-sky" size={32} />
+                <h3 className="font-bold text-xl">Safety First</h3>
+                <p className="text-gray-300">We implement strict safety measures to ensure secure working environments for everyone.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/10 p-10 rounded-2xl backdrop-blur-sm border border-white/20">
+            <h3 className="text-2xl font-heading font-bold mb-6 border-b border-white/20 pb-4">Our Core Values</h3>
+            <ul className="space-y-6">
+              <li>
+                <strong className="text-brand-sky text-lg block mb-1">Integrity</strong>
+                <p className="text-gray-300 text-sm">Upholding the highest ethical standards, ensuring transparency, honesty, and accountability.</p>
+              </li>
+              <li>
+                <strong className="text-brand-sky text-lg block mb-1">Quality Excellence</strong>
+                <p className="text-gray-300 text-sm">Delivering superior quality through skilled workmanship and strict quality control.</p>
+              </li>
+              <li>
+                <strong className="text-brand-sky text-lg block mb-1">Innovation</strong>
+                <p className="text-gray-300 text-sm">Adopting modern engineering practices and innovative solutions.</p>
+              </li>
+            </ul>
+            <div className="mt-8 pt-6 border-t border-white/20">
+              <Link href="/about" className="text-white font-bold hover:text-brand-sky transition-colors flex items-center space-x-2">
+                <span>View All Values & Mission</span>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8.10 Featured Projects */}
+      <section className="w-full py-20 bg-gray-50 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+              <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Our Portfolio</h4>
+              <h2 className="text-4xl font-heading font-black text-brand-navy">Featured Projects</h2>
+            </div>
+            <Link href="/projects" className="mt-4 md:mt-0 inline-flex items-center space-x-2 text-brand-navy font-bold hover:text-brand-sky transition-colors">
+              <span>View All Projects</span>
+              <ArrowRight size={20} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((project) => (
+              <Link href={`/projects`} key={project.id} className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                <div className="h-56 relative overflow-hidden bg-gray-200">
+                  <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors z-10"></div>
+                  {/* Using coverImage if valid, else placeholder style */}
+                  <Image src={project.coverImage || "/images/R Colors Company Profile Final (2)_page-0012.jpg"} alt={project.name} fill className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-4 right-4 z-20 bg-brand-sky text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">
+                    {project.category}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading font-bold text-xl text-brand-navy mb-1">{project.name}</h3>
+                  <div className="flex items-center text-gray-500 text-sm mb-3">
+                    <span className="capitalize">{project.division.replace('-', ' ')}</span>
+                    {project.location && (
+                      <>
+                        <span className="mx-2">•</span>
+                        <span>{project.location}</span>
+                      </>
+                    )}
+                  </div>
+                  <p className="text-gray-600 text-sm line-clamp-2">{project.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8.11 Trusted Clients */}
+      <section className="w-full py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Our Network</h4>
+            <h2 className="text-4xl font-heading font-black text-brand-navy">Trusted Clients</h2>
+            <div className="w-24 h-1 bg-brand-sky mx-auto mt-4 mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We are proud to collaborate with respected clients and development partners. Their trust reflects our commitment to quality, transparency, and long-term relationships.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {clientsData.map((client) => (
+              <div 
+                key={client.id} 
+                className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-center h-32 shadow-sm hover:shadow-md transition-shadow group"
+              >
+                <span className="font-heading font-bold text-center text-gray-500 group-hover:text-brand-navy transition-colors">
+                  {client.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8.12 Final CTA */}
+      <section className="w-full py-24 bg-brand-sky text-white px-4 text-center">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <h2 className="text-4xl md:text-5xl font-heading font-black">Let&apos;s Build Something Great Together</h2>
+          <p className="text-xl font-light opacity-90">
+            Thank you for choosing R Colors Group of Companies. Your vision inspires our work, and your satisfaction remains our highest priority.
+          </p>
+          <Link href="/contact" className="inline-block bg-brand-navy text-white px-10 py-4 rounded font-bold text-lg hover:bg-white hover:text-brand-navy transition-colors shadow-xl transform hover:-translate-y-1">
+            Contact Us Today
+          </Link>
+        </div>
+      </section>
+
+    </main>
   );
 }

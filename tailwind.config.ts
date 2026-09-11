@@ -11,6 +11,15 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'brand-navy': '#0F3C63',
+        'brand-sky': '#28A9DC',
+        'brand-red': '#C1272D',
+        'brand-green': '#235c1d',
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        heading: ['var(--font-montserrat)'],
+        harlow: ['"Harlow Solid Italic"', 'cursive'],
       },
     },
   },
