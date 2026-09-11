@@ -1,4 +1,3 @@
-import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -99,7 +98,7 @@ export default function AboutPage() {
       {/* Core Values */}
       <section className="w-full py-20 bg-brand-navy text-white px-4 relative">
         <div className="max-w-7xl mx-auto space-y-16 relative z-10">
-          
+
           <div>
             <div className="text-center mb-12">
               <h2 className="text-4xl font-heading font-black mb-4">OUR CORE VALUES</h2>
