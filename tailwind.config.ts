@@ -21,6 +21,20 @@ const config: Config = {
         heading: ['var(--font-montserrat)'],
         harlow: ['"Harlow Solid Italic"', 'cursive'],
       },
+      keyframes: {
+        'marquee-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-right': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        }
+      },
+      animation: {
+        'marquee-left': 'marquee-left 180s linear infinite',
+        'marquee-right': 'marquee-right 180s linear infinite',
+      }
     },
   },
   plugins: [],

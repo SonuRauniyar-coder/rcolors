@@ -254,17 +254,34 @@ export default function Home() {
               We are proud to collaborate with respected clients and development partners. Their trust reflects our commitment to quality, transparency, and long-term relationships.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {clientsData.map((client) => (
-              <div 
-                key={client.id} 
-                className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-center h-32 shadow-sm hover:shadow-md transition-shadow group"
-              >
-                <span className="font-heading font-bold text-center text-gray-500 group-hover:text-brand-navy transition-colors">
-                  {client.name}
-                </span>
-              </div>
-            ))}
+          <div className="relative w-full overflow-hidden max-w-full group py-4">
+            {/* First Row - Sliding Left */}
+            <div className="flex w-max animate-marquee-left group-hover:[animation-play-state:paused] mb-6 gap-6 pl-6">
+              {[...clientsData, ...clientsData, ...clientsData, ...clientsData].map((client, idx) => (
+                <div 
+                  key={`row1-${client.id}-${idx}`} 
+                  className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
+                >
+                  <div className="relative w-full h-20 mb-2">
+                    <Image src="/images/logo.jpg" alt={client.name} fill className="object-contain transition-all duration-300" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Second Row - Sliding Right */}
+            <div className="flex w-max animate-marquee-right group-hover:[animation-play-state:paused] gap-6 pl-6">
+              {[...clientsData, ...clientsData, ...clientsData, ...clientsData].map((client, idx) => (
+                <div 
+                  key={`row2-${client.id}-${idx}`} 
+                  className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
+                >
+                  <div className="relative w-full h-20 mb-2">
+                    <Image src="/images/logo.jpg" alt={client.name} fill className="object-contain transition-all duration-300" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
