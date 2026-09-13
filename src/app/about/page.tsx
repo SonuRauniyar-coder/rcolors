@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { Handshake, Award, Lightbulb, ShieldCheck, MessageSquareCheck, ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pb-24">
       {/* Header Banner */}
       <section className="relative w-full h-[40vh] min-h-[300px] flex flex-col justify-center items-center text-center px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-brand-navy/90 z-10"></div>
+        <div className="absolute inset-0 bg-brand-navy z-10"></div>
         <div className="absolute inset-0 bg-[url('/images/R%20Colors%20Company%20Profile%20Final%20(2)_page-0003.jpg')] bg-cover bg-center mix-blend-overlay"></div>
         <div className="relative z-20 max-w-4xl mx-auto space-y-4">
           <h1 className="text-4xl md:text-6xl font-heading font-black text-white">
@@ -23,15 +24,29 @@ export default function AboutPage() {
       {/* About Section */}
       <section className="w-full py-16 px-4">
         <div className="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg leading-relaxed">
-          <p>
-            R Colors Group of Companies is a growing organization engaged in construction, contracting, real estate development, and property solutions. With a strong commitment to quality and professionalism, we focus on delivering reliable services that meet modern industry standards and client expectations.
+          <p>R Colors Group of Companies is a growing organization engaged in construction,
+            contracting, real estate development, and property solutions. With a strong commitment
+            to quality and professionalism, we focus on delivering reliable services that meet modern
+            industry standards and client expectations. Our work reflects a blend of innovation,
+            practical experience, and strong industry knowledge.
           </p>
           <p>
-            We combine expertise, innovation, and skilled workmanship to transform ideas into reality. Every project reflects our dedication to excellence, integrity, and client satisfaction. Our focus is on timely execution, safety standards, and long-term value creation.
+            Our team combines technical expertise with practical experience to manage projects
+            efficiently from planning to completion. We believe in using quality materials, effective
+            project management, and skilled workmanship to ensure durable and successful
+            developments. Every project is executed with careful attention to detail, safety standards,
+            and structured planning.
+          </p>
+          <p>
+            At R Colors Group, we aim to build long-term relationships with our clients by maintaining
+            transparency, timely execution, and consistent performance. Our goal is to contribute to
+            modern infrastructure while creating value for communities and stakeholders. Through
+            continuous improvement and dedication, we strive to deliver projects that reflect
+            reliability and lasting quality.
           </p>
           <blockquote className="border-l-4 border-brand-sky pl-6 py-4 my-10 bg-gray-50 rounded-r-lg shadow-sm">
             <p className="text-2xl italic font-heading text-brand-navy font-semibold">
-              &quot;At R Colors Group of Companies, we believe in building more than structures — we build trust, long-term relationships, and spaces that reflect quality, strength, and modern development.&quot;
+              &quot;At R Colors Group of Companies, we believe in building more than structures. We build trust, long-term relationships, and spaces that reflect quality, strength, and modern development.&quot;
             </p>
           </blockquote>
         </div>
@@ -46,7 +61,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-4">
             <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Director&apos;s Message</h4>
-            <h2 className="text-3xl font-heading font-black text-brand-navy">Raj Mani Singh</h2>
+            <h2 className="text-3xl font-heading font-bold text-brand-navy">Raj Mani Singh</h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
                 Progress for me has never been just a dream; it has always been a vision that turns into reality through dedication and continuous effort. With this belief, I founded R Colors Construction & Developers in 2011, with the aim of contributing to the construction industry through quality work, integrity, and strong professional values.
@@ -65,9 +80,9 @@ export default function AboutPage() {
       {/* Mission / Vision / Purpose */}
       <section className="w-full py-20 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-navy">
+          <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-sky">
             <h3 className="text-2xl font-heading font-black text-brand-navy mb-4 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-full bg-brand-sky text-white flex items-center justify-center text-sm">M</span>
+              <span className="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center text-sm">M</span>
               MISSION
             </h3>
             <p className="text-gray-600 leading-relaxed text-sm">
@@ -83,9 +98,9 @@ export default function AboutPage() {
               Our vision is to become a trusted leader in the construction and infrastructure industry through innovation, reliability, and sustainable practices. We aim to expand our presence while delivering projects that symbolize strength and modern engineering. We envision building spaces that inspire growth and contribute to economic development. Through continuous improvement and advanced solutions, we strive to shape a better and stronger future.
             </p>
           </div>
-          <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-red">
+          <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-sky">
             <h3 className="text-2xl font-heading font-black text-brand-navy mb-4 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-sm">P</span>
+              <span className="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center text-sm">P</span>
               PURPOSE
             </h3>
             <p className="text-gray-600 leading-relaxed text-sm">
@@ -101,29 +116,47 @@ export default function AboutPage() {
 
           <div>
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-heading font-black mb-4">OUR CORE VALUES</h2>
+              <h2 className="text-4xl font-heading font-black text-brand-white mb-4">OUR CORE VALUES</h2>
               <div className="w-24 h-1 bg-brand-sky mx-auto"></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Integrity", desc: "We uphold the highest ethical standards in all our business dealings, ensuring transparency, honesty, and accountability across all divisions." },
-                { title: "Quality Excellence", desc: "We are committed to delivering superior quality in construction, contracting, and infrastructure projects through skilled workmanship and strict quality control." },
-                { title: "Innovation", desc: "Through R Colors Infratech, we adopt modern engineering practices, advanced technologies, and innovative solutions to meet evolving industry needs." },
-                { title: "Safety", desc: "Safety is our top priority. We implement strict safety measures to ensure secure working environments for our employees, partners, and clients." },
-                { title: "Client Commitment", desc: "We focus on understanding client requirements and delivering projects on time with complete satisfaction." }
+                { title: "Integrity", desc: "We uphold the highest ethical standards in all our business dealings, ensuring transparency, honesty, and accountability across all divisions.", icon: Handshake },
+                { title: "Quality Excellence", desc: "We are committed to delivering superior quality in construction, contracting, and infrastructure projects through skilled workmanship and strict quality control.", icon: Award },
+                { title: "Innovation", desc: "Through R Colors Infratech, we adopt modern engineering practices, advanced technologies, and innovative solutions to meet evolving industry needs.", icon: Lightbulb },
+                { title: "Safety", desc: "Safety is our top priority. We implement strict safety measures to ensure secure working environments for our employees, partners, and clients.", icon: ShieldCheck },
+                { title: "Client Commitment", desc: "We focus on understanding client requirements and delivering projects on time with complete satisfaction.", icon: MessageSquareCheck },
               ].map((value, idx) => (
-                <div key={idx} className="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20 flex flex-col items-start gap-4 hover:bg-white/20 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-brand-sky flex items-center justify-center font-bold text-xl">{idx + 1}</div>
-                  <div>
-                    <h3 className="font-heading font-bold text-xl mb-2">{value.title}</h3>
-                    <p className="text-gray-300 text-sm">{value.desc}</p>
+                <div
+                  key={idx}
+                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col"
+                >
+                  <div className="w-12 h-12 rounded-full bg-brand-sky/10 flex items-center justify-center mb-4">
+                    <value.icon className="w-6 h-6 text-brand-sky" />
                   </div>
+                  <h3 className="font-heading font-bold text-brand-navy text-lg md:text-xl mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
                 </div>
               ))}
+
+              {/* CTA card — fills the 6th grid slot on lg screens */}
+              <div className="bg-brand-sky rounded-lg shadow-md p-6 flex flex-col justify-center items-start text-white">
+                <h3 className="font-heading font-bold text-lg md:text-xl mb-2">See it in action</h3>
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  Explore the projects built on these values.
+                </p>
+                <a
+                  href="/projects"
+                  className="inline-flex items-center gap-2 bg-white text-brand-navy font-semibold text-sm px-4 py-2 rounded-md hover:bg-gray-100 transition-colors"
+                >
+                  View projects <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
-
-
         </div>
       </section>
 

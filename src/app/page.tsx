@@ -102,10 +102,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[url('/images/Rcolors2.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
               </div>
               <div className="p-8 text-center flex-grow flex flex-col justify-center">
-                <div className="relative h-24 w-full mx-auto mb-3">
+                <div className="relative h-28 w-full mx-auto mb-3">
                   <Image src="/images/logo2.jpg" alt="R Colors Construction & Developers" fill className="object-contain" />
                 </div>
-                <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Building & Development</p>
+                {/* <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Building & Development</p> */}
               </div>
             </Link>
 
@@ -116,10 +116,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[url('/images/Rcolors1.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
               </div>
               <div className="p-8 text-center flex-grow flex flex-col justify-center">
-                <div className="relative h-24 w-full mx-auto mb-3">
+                <div className="relative h-28 w-full mx-auto mb-3">
                   <Image src="/images/logo.jpg" alt="R Colors" fill className="object-contain" />
                 </div>
-                <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Finishing Works</p>
+                {/* <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Finishing Works</p> */}
               </div>
             </Link>
 
@@ -130,10 +130,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[url('/images/Rcolors3.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
               </div>
               <div className="p-8 text-center flex-grow flex flex-col justify-center">
-                <div className="relative h-24 w-full mx-auto mb-3">
+                <div className="relative h-28 w-full mx-auto mb-3">
                   <Image src="/images/logo3.jpg" alt="R Colors Infratech" fill className="object-contain" />
                 </div>
-                <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Real Estate & Sales Purchase</p>
+                {/* <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Real Estate & Sales Purchase</p> */}
               </div>
             </Link>
           </div>
@@ -258,8 +258,8 @@ export default function Home() {
             {/* First Row - Sliding Left */}
             <div className="flex w-max animate-marquee-left group-hover:[animation-play-state:paused] mb-6 gap-6 pl-6">
               {[...clientsData, ...clientsData, ...clientsData, ...clientsData].map((client, idx) => (
-                <div 
-                  key={`row1-${client.id}-${idx}`} 
+                <div
+                  key={`row1-${client.id}-${idx}`}
                   className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
                 >
                   <div className="relative w-full h-20 mb-2">
@@ -272,8 +272,8 @@ export default function Home() {
             {/* Second Row - Sliding Right */}
             <div className="flex w-max animate-marquee-right group-hover:[animation-play-state:paused] gap-6 pl-6">
               {[...clientsData, ...clientsData, ...clientsData, ...clientsData].map((client, idx) => (
-                <div 
-                  key={`row2-${client.id}-${idx}`} 
+                <div
+                  key={`row2-${client.id}-${idx}`}
                   className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
                 >
                   <div className="relative w-full h-20 mb-2">
