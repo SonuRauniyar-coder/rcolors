@@ -2,15 +2,20 @@
 
 import { Handshake, Award, Lightbulb, ShieldCheck, MessageSquareCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export default function MissionVisionPage() {
   return (
     <div className="w-full">
-      <div className="w-full pt-20 pb-4 px-4 text-center">
-        <h4 className="text-brand-sky font-bold uppercase tracking-widest text-sm mb-2">Our Purpose</h4>
-        <h2 className="text-4xl md:text-5xl font-heading font-black text-brand-navy">Mission &amp; Vision</h2>
-        <div className="w-24 h-1 bg-brand-sky mx-auto mt-4"></div>
-      </div>
+      <PageHeader 
+        titlePart1="MISSION &" 
+        titlePart2="VISION" 
+        subNavItems={[
+          { name: 'About Company', href: '/about' },
+          { name: 'Mission & Vision', href: '/about/mission' },
+          { name: 'Clients', href: '/about/clients' },
+        ]} 
+      />
 
       <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">

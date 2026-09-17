@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PaintRoller, Scissors, LayoutGrid, Droplet, Sofa, Zap, Wrench, Hammer, ArrowRight } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 export default function RColorsFinishingPage() {
   const services = [
@@ -47,16 +48,15 @@ export default function RColorsFinishingPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
-      {/* Header Banner */}
-      <section data-aos="fade-up" data-aos-duration="1000" className="w-full bg-brand-navy py-20 px-4 text-center">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h1 className="text-4xl md:text-6xl font-heading font-black text-white">
-            <span className="text-brand-red">R</span> COLORS
-          </h1>
-          <p className="text-brand-sky font-bold uppercase tracking-widest">Finishing Works & Interior Solutions</p>
-          <div className="w-24 h-1 bg-brand-sky mx-auto mt-6"></div>
-        </div>
-      </section>
+      <PageHeader 
+        titlePart1="OUR" 
+        titlePart2="DIVISIONS" 
+        subNavItems={[
+          { name: 'Construction & Developers', href: '/divisions/construction' },
+          { name: 'R Colors (Finishing Works)', href: '/divisions/r-colors' },
+          { name: 'Infratech', href: '/divisions/infratech' },
+        ]} 
+      />
 
       {/* Intro Copy */}
       <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4">

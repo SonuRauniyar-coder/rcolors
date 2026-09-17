@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { CheckCircle, ArrowRight, Building2, Handshake, TrendingUp, Map } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 export default function InfratechDivisionPage() {
   const checklist = [
@@ -36,19 +38,15 @@ export default function InfratechDivisionPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
-      {/* Header Banner */}
-      <section data-aos="fade-up" data-aos-duration="1000" className="relative w-full h-[40vh] min-h-[300px] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-brand-navy">
-        <div className="absolute inset-0 bg-[url('/images/R%20Colors%20Company%20Profile%20Final%20(2)_page-0010.jpg')] bg-cover bg-center mix-blend-overlay opacity-40"></div>
-        <div className="relative z-20 max-w-4xl mx-auto space-y-4">
-          <div className="flex justify-center mb-6">
-            <div className="font-heading font-black text-6xl text-white">
-              <span className="text-brand-red">R</span> COLORS <span className="text-white">INFRATECH</span>
-            </div>
-          </div>
-          <p className="text-brand-sky font-bold uppercase tracking-widest text-lg">Real Estate & Property Solutions</p>
-          <div className="w-24 h-1 bg-brand-sky mx-auto mt-6"></div>
-        </div>
-      </section>
+      <PageHeader 
+        titlePart1="OUR" 
+        titlePart2="DIVISIONS" 
+        subNavItems={[
+          { name: 'Construction & Developers', href: '/divisions/construction' },
+          { name: 'R Colors (Finishing Works)', href: '/divisions/r-colors' },
+          { name: 'Infratech', href: '/divisions/infratech' },
+        ]} 
+      />
 
       {/* Intro & Checklist */}
       <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4">

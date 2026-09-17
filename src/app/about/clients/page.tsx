@@ -2,18 +2,25 @@
 
 import Image from "next/image";
 import clientsData from "@/data/clients.json";
+import PageHeader from "@/components/PageHeader";
 
 export default function ClientsPage() {
   const clientImages = Array.from({ length: 22 }, (_, i) => i + 1);
 
   return (
     <div className="w-full">
+      <PageHeader 
+        titlePart1="OUR" 
+        titlePart2="CLIENTS" 
+        subNavItems={[
+          { name: 'About Company', href: '/about' },
+          { name: 'Mission & Vision', href: '/about/mission' },
+          { name: 'Clients', href: '/about/clients' },
+        ]} 
+      />
       <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Our Network</h4>
-            <h2 className="text-4xl font-heading font-black text-brand-navy">Trusted Clients</h2>
-            <div className="w-24 h-1 bg-brand-sky mx-auto mt-4 mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               We are proud to collaborate with respected clients and development partners. Their trust reflects our commitment to quality, transparency, and long-term relationships.
             </p>

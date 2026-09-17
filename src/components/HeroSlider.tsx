@@ -61,8 +61,8 @@ export default function HeroSlider() {
             <div
               key={index}
               className={`absolute bottom-0 left-0 w-full transition-all duration-1000 ease-in-out ${isActive
-                  ? "opacity-100 translate-y-0 pointer-events-auto"
-                  : "opacity-0 translate-y-8 pointer-events-none"
+                ? "opacity-100 translate-y-0 pointer-events-auto"
+                : "opacity-0 translate-y-8 pointer-events-none"
                 }`}
             >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-light text-white tracking-wide drop-shadow-lg leading-tight md:leading-tight">
