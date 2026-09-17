@@ -28,7 +28,7 @@ export default function ConstructionDivisionPage() {
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
       {/* Header Banner */}
-      <section className="relative w-full h-[40vh] min-h-[300px] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-brand-navy">
+      <section data-aos="fade-up" data-aos-duration="1000" className="relative w-full h-[40vh] min-h-[300px] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-brand-navy">
         <div className="absolute inset-0 bg-[url('/images/R%20Colors%20Company%20Profile%20Final%20(2)_page-0004.jpg')] bg-cover bg-center mix-blend-overlay opacity-40"></div>
         <div className="relative z-20 max-w-4xl mx-auto space-y-4">
           {/* <p className="text-brand-sky font-bold uppercase tracking-wider">Our Core Services</p> */}
@@ -40,7 +40,7 @@ export default function ConstructionDivisionPage() {
       </section>
 
       {/* Intro Copy */}
-      <section className="w-full py-16 px-4">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-700 text-lg leading-relaxed md:text-xl">
             R Colors Construction & Development specializes in delivering high-quality residential, commercial, and development projects with precision and reliability. We focus on structural strength, modern design, and timely execution to create lasting value for our clients. Our expertise covers end-to-end project execution, from planning and structural work to finishing and final handover.
@@ -49,7 +49,7 @@ export default function ConstructionDivisionPage() {
       </section>
 
       {/* 4 Numbered Core Services */}
-      <section className="w-full py-16 px-4 bg-gray-50">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto space-y-12">
 
           {services.map((service, idx) => {
@@ -87,7 +87,7 @@ export default function ConstructionDivisionPage() {
       </section>
 
       {/* View Projects CTA */}
-      <section className="w-full py-20 px-4 text-center">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4 text-center">
         <div className="max-w-3xl mx-auto bg-brand-navy text-white rounded-2xl p-12 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-sky/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
           <h2 className="text-3xl font-heading font-black mb-6 relative z-10">See Our Work in Action</h2>

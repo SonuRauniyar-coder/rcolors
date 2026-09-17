@@ -48,7 +48,7 @@ export default function RColorsFinishingPage() {
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
       {/* Header Banner */}
-      <section className="w-full bg-brand-navy py-20 px-4 text-center">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full bg-brand-navy py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-6xl font-heading font-black text-white">
             <span className="text-brand-red">R</span> COLORS
@@ -59,7 +59,7 @@ export default function RColorsFinishingPage() {
       </section>
 
       {/* Intro Copy */}
-      <section className="w-full py-16 px-4">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-700 text-lg leading-relaxed md:text-xl">
             R Colors delivers high-quality finishing and interior solutions designed to enhance durability, functionality, and aesthetic appeal. We ensure precision, professional workmanship, and timely execution across all projects. With experienced teams and structured processes, we focus on delivering reliable results that meet client expectations. Our commitment to quality standards and attention to detail ensures every project reflects excellence and long-term value.
@@ -68,7 +68,7 @@ export default function RColorsFinishingPage() {
       </section>
 
       {/* Services Grid (Sherwin-Williams inspired, bright tiles) */}
-      <section className="w-full py-20 px-4 bg-gray-50">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, idx) => {
             const Icon = service.icon;
@@ -93,7 +93,7 @@ export default function RColorsFinishingPage() {
       </section>
 
       {/* View Projects CTA */}
-      <section className="w-full pt-16 px-4 text-center">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full pt-16 px-4 text-center">
         <div className="max-w-3xl mx-auto border-t-2 border-brand-sky pt-16">
           <h2 className="text-3xl font-heading font-black text-brand-navy mb-6">Explore Our Finishing Projects</h2>
           <p className="text-gray-600 mb-8 text-lg">

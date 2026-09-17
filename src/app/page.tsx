@@ -3,59 +3,20 @@ import Image from "next/image";
 import { ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
 import projects from "@/data/projects.json";
 import clientsData from "@/data/clients.json";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
+  const clientImages = Array.from({ length: 22 }, (_, i) => i + 1);
   const featuredProjects = projects.slice(0, 6);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      {/* 8.1 Hero Section */}
-      <section className="relative w-full h-[80vh] min-h-[600px] flex flex-col justify-center items-center text-center px-4 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/images/hero-bg-uploaded.jpg')] bg-cover bg-center z-0"></div>
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-brand-navy/60 z-10"></div>
+      {/* 8.1 Hero Section Slider */}
+      <HeroSlider />
 
-        <div className="relative z-20 max-w-4xl mx-auto space-y-6">
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-white">
-            We are <span className="text-brand-sky">R Colors</span> Group
-          </h1>
-          <p className="text-lg md:text-2xl text-gray-200 font-light leading-relaxed">
-            A trusted name in construction, contracting, and infrastructure development — delivering residential, commercial, and industrial projects with quality, precision, and commitment.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
-            <Link href="#divisions" className="bg-brand-sky text-white px-8 py-4 rounded font-bold hover:bg-white hover:text-brand-sky transition-colors w-full sm:w-auto text-lg shadow-lg">
-              Explore Our Divisions
-            </Link>
-            <Link href="/projects" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded font-bold hover:bg-white hover:text-brand-navy transition-colors w-full sm:w-auto text-lg">
-              View Projects
-            </Link>
-          </div>
-        </div>
-
-        {/* Angled Divider */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
-          <svg className="relative block w-full h-12 md:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 120L0 120 0 0 1200 120z" className="fill-brand-sky"></path>
-          </svg>
-        </div>
-      </section>
-
-      {/* 8.2 CTA Strip */}
-      <section className="w-full bg-brand-sky text-white py-8 px-4 relative z-30 -mt-1 shadow-md">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-0">
-            We provide fast and affordable service for your projects. Hire us!
-          </h2>
-          <Link href="/contact" className="bg-brand-navy text-white px-8 py-3 rounded font-bold hover:bg-white hover:text-brand-navy transition-colors flex items-center space-x-2 shadow-lg">
-            <span>Get the Quote</span>
-            <ArrowRight size={20} />
-          </Link>
-        </div>
-      </section>
 
       {/* 8.4 & 8.5 Welcome & About Us */}
-      <section className="w-full py-20 px-4">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="absolute -inset-4 bg-brand-sky/10 transform rotate-3 rounded-3xl -z-10"></div>
@@ -200,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* 8.10 Featured Projects */}
-      <section className="w-full py-20 bg-gray-50 px-4">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 bg-gray-50 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
@@ -244,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* 8.11 Trusted Clients */}
-      <section className="w-full py-20 px-4 bg-white">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Our Network</h4>
@@ -257,13 +218,13 @@ export default function Home() {
           <div className="relative w-full overflow-hidden max-w-full group py-4">
             {/* First Row - Sliding Left */}
             <div className="flex w-max animate-marquee-left group-hover:[animation-play-state:paused] mb-6 gap-6 pl-6">
-              {[...clientsData, ...clientsData, ...clientsData, ...clientsData].map((client, idx) => (
+              {[...clientImages, ...clientImages, ...clientImages].map((imgNum, idx) => (
                 <div
-                  key={`row1-${client.id}-${idx}`}
+                  key={`row1-${imgNum}-${idx}`}
                   className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
                 >
                   <div className="relative w-full h-20 mb-2">
-                    <Image src="/images/logo.jpg" alt={client.name} fill className="object-contain transition-all duration-300" />
+                    <Image src={`/images/${imgNum}.jpg`} alt={`Client ${imgNum}`} fill sizes="240px" className="object-contain transition-all duration-300" />
                   </div>
                 </div>
               ))}
@@ -271,13 +232,13 @@ export default function Home() {
 
             {/* Second Row - Sliding Right */}
             <div className="flex w-max animate-marquee-right group-hover:[animation-play-state:paused] gap-6 pl-6">
-              {[...clientsData, ...clientsData, ...clientsData, ...clientsData].map((client, idx) => (
+              {[...clientImages, ...clientImages, ...clientImages].map((imgNum, idx) => (
                 <div
-                  key={`row2-${client.id}-${idx}`}
+                  key={`row2-${imgNum}-${idx}`}
                   className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
                 >
                   <div className="relative w-full h-20 mb-2">
-                    <Image src="/images/logo.jpg" alt={client.name} fill className="object-contain transition-all duration-300" />
+                    <Image src={`/images/${imgNum}.jpg`} alt={`Client ${imgNum}`} fill sizes="240px" className="object-contain transition-all duration-300" />
                   </div>
                 </div>
               ))}
@@ -287,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* 8.12 Final CTA */}
-      <section className="w-full py-24 bg-brand-sky text-white px-4 text-center">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-24 bg-brand-sky text-white px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-8">
           <h2 className="text-4xl md:text-5xl font-heading font-black">Let&apos;s Build Something Great Together</h2>
           <p className="text-xl font-light opacity-90">

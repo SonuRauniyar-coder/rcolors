@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-brand-navy text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Brand Col */}
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4" data-aos="fade-up" data-aos-duration="1000">
           <div className="flex items-center gap-3">
             <div className="font-heading font-black text-2xl text-white">
               <span className="text-brand-red">R Colors</span> Group of Companies
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1200">
           <h4 className="font-heading font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-brand-sky">
             Quick Links
           </h4>
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         {/* Divisions */}
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1400">
           <h4 className="font-heading font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-brand-sky">
             Our Divisions
           </h4>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1600">
           <h4 className="font-heading font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-brand-sky">
             Contact Info
           </h4>

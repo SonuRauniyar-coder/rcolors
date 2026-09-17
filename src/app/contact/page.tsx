@@ -4,7 +4,7 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
       {/* Header Banner */}
-      <section className="relative w-full h-[30vh] min-h-[250px] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-brand-navy">
+      <section data-aos="fade-up" data-aos-duration="1000" className="relative w-full h-[30vh] min-h-[250px] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-brand-navy">
         <div className="absolute inset-0 bg-[url('/images/R%20Colors%20Company%20Profile%20Final%20(2)_page-0016.jpg')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
         <div className="relative z-20 max-w-4xl mx-auto space-y-4">
           <h1 className="text-4xl md:text-6xl font-heading font-black text-white">
@@ -15,7 +15,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content */}
-      <section className="w-full py-16 px-4">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Left Column: Info & Map */}

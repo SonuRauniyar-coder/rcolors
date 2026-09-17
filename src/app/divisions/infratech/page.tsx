@@ -37,7 +37,7 @@ export default function InfratechDivisionPage() {
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
       {/* Header Banner */}
-      <section className="relative w-full h-[40vh] min-h-[300px] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-brand-navy">
+      <section data-aos="fade-up" data-aos-duration="1000" className="relative w-full h-[40vh] min-h-[300px] flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-brand-navy">
         <div className="absolute inset-0 bg-[url('/images/R%20Colors%20Company%20Profile%20Final%20(2)_page-0010.jpg')] bg-cover bg-center mix-blend-overlay opacity-40"></div>
         <div className="relative z-20 max-w-4xl mx-auto space-y-4">
           <div className="flex justify-center mb-6">
@@ -51,7 +51,7 @@ export default function InfratechDivisionPage() {
       </section>
 
       {/* Intro & Checklist */}
-      <section className="w-full py-20 px-4">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy">Connecting You to the Right Property Solutions</h2>
@@ -81,7 +81,7 @@ export default function InfratechDivisionPage() {
       </section>
 
       {/* Expanded Services */}
-      <section className="w-full py-20 px-4 bg-gray-50">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-heading font-black text-brand-navy mb-4">Your Partner in Property Success</h2>
@@ -110,7 +110,7 @@ export default function InfratechDivisionPage() {
       </section>
 
       {/* Enquiry Form Section */}
-      <section className="w-full py-20 px-4">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4">
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-5">
             <div className="md:col-span-2 bg-brand-navy p-8 text-white flex flex-col justify-center relative overflow-hidden">
