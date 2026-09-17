@@ -39,10 +39,10 @@ export default function Navbar() {
     <header className={`w-full z-50 transition-all duration-300 ${headerPosClass} ${headerBgClass}`}>
       {/* Main Header */}
       <div>
-        <div className="w-full px-4 md:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div className="w-full px-4 md:px-6 lg:px-8 py-3 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-6 lg:gap-10 ml-4 md:ml-8 lg:ml-16">
-            <div className="relative w-[70px] h-[50px] -my-4 shrink-0">
+            <div className="relative w-[70px] h-[50px] -my-3 shrink-0">
               <Image src="/images/logo.jpg" alt="R Colors Group Logo" fill className="rounded-md object-cover" />
             </div>
             <div className="hidden sm:block whitespace-nowrap text-3xl lg:text-4xl font-heading font-bold tracking-tight">
