@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 // finishing works, Sales & purchase , Beyond your imagination 
 const slides = [
-  { image: "/images/home1.jpg", text: "R Colors Group Of Companies" },
+  { image: "/images/home1.jpg", text: "R Colors Group Of Companies", subtext: "Beyond your Imagination" },
   { image: "/images/home2.jpg", text: "R Colors Construction and Developers" },
-  { image: "/images/home3.jpg", text: "R Colors" },
-  { image: "/images/home4.jpg", text: "R Colors Estate" },
+  { image: "/images/home3.jpg", text: "R Colors", subtext: "Finishing Works" },
+  { image: "/images/home4.2.jpg", text: "R Colors Estate", subtext: "Sales and Purchase" },
 ];
 
 export default function HeroSlider() {
@@ -65,9 +65,14 @@ export default function HeroSlider() {
                 : "opacity-0 translate-y-8 pointer-events-none"
                 }`}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-light text-white tracking-wide drop-shadow-lg leading-tight md:leading-tight">
+              <h1 className="text-4xl md:text-6xl ml-12 md:ml-20 lg:ml-30 lg:text-7xl font-heading font-light text-white tracking-wide drop-shadow-lg leading-tight md:leading-tight">
                 {slide.text}
               </h1>
+              {slide.subtext && (
+                <p className="mt-2 md:mt-4 ml-15 md:ml-24 lg:ml-31 pl-3 md:pl-4 border-l-[3px] border-white/80 text-lg md:text-xl lg:text-2xl text-gray-200 font-light tracking-widest drop-shadow-md">
+                  {slide.subtext}
+                </p>
+              )}
             </div>
           );
         })}

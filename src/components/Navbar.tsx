@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-6 lg:gap-10 ml-4 md:ml-8 lg:ml-16">
             <div className="relative w-[70px] h-[50px] -my-3 shrink-0">
-              <Image src="/images/logo.jpg" alt="R Colors Group Logo" fill className="rounded-md object-cover" />
+              <Image src="/images/icon.jpg" alt="R Colors Group Logo" fill className="rounded-md object-cover" />
             </div>
             <div className="hidden sm:block whitespace-nowrap text-3xl lg:text-4xl font-heading font-bold tracking-tight">
               <span className={logoRedClass}>R </span>
@@ -55,9 +55,9 @@ export default function Navbar() {
           </Link>
 
           {/* Right Section Wrapper */}
-          <div className="flex items-center">
+          <div className="flex items-center mr-8 md:mr-12 lg:mr-24">
             {/* Desktop Nav */}
-            <nav className={`hidden md:flex items-center space-x-4 lg:space-x-6 font-semibold text-sm lg:text-base whitespace-nowrap mr-2 lg:mr-4 ${textColorClass}`}>
+            <nav className={`hidden md:flex items-center space-x-6 lg:space-x-10 font-semibold text-sm lg:text-base whitespace-nowrap mr-6 lg:mr-10 ${textColorClass}`}>
               {/* About Us Mega Menu Trigger */}
               <div className="relative group cursor-pointer py-4" onMouseLeave={() => setForceClose(false)}>
                 <div className="flex flex-col items-center group-hover:text-brand-sky transition-colors relative">
