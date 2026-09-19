@@ -42,15 +42,15 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Divisions */}
+        {/* Businesses */}
         <div data-aos="fade-up" data-aos-duration="1400">
           <h4 className="font-heading font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-brand-sky">
-            Our Divisions
+            Our Businesses
           </h4>
           <ul className="space-y-3 text-gray-300">
-            <li><Link href="/divisions/construction" className="hover:text-brand-sky transition-colors">Construction & Developers</Link></li>
-            <li><Link href="/divisions/r-colors" className="hover:text-brand-sky transition-colors">R Colors Finishing Works</Link></li>
-            <li><Link href="/divisions/infratech" className="hover:text-brand-sky transition-colors">R Colors Infratech</Link></li>
+            <li><Link href="/businesses/construction" className="hover:text-brand-sky transition-colors">Construction & Developers</Link></li>
+            <li><Link href="/businesses/r-colors" className="hover:text-brand-sky transition-colors">R Colors Finishing Works</Link></li>
+            <li><Link href="/businesses/estate" className="hover:text-brand-sky transition-colors">R Colors Estate</Link></li>
           </ul>
         </div>
 

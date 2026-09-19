@@ -66,7 +66,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               {/* Fallback description if none provided beyond the short one */}
               {project.description.length < 100 && (
                 <p className="text-gray-700 leading-relaxed text-lg mt-4">
-                  This project highlights R Colors Group&apos;s commitment to quality and excellence. Delivered with precision and attention to detail, it stands as a testament to our expertise in the {project.division.replace('-', ' ')} sector.
+                  This project highlights R Colors Group&apos;s commitment to quality and excellence. Delivered with precision and attention to detail, it stands as a testament to our expertise in the {project.business.replace('-', ' ')} sector.
                 </p>
               )}
             </div>
@@ -78,8 +78,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               <h3 className="text-xl font-heading font-bold text-brand-navy mb-4 border-b pb-2">Project Details</h3>
               <ul className="space-y-4">
                 <li className="flex justify-between items-center">
-                  <span className="text-gray-500 font-medium">Division</span>
-                  <span className="font-semibold text-brand-navy capitalize">{project.division.replace('-', ' ')}</span>
+                  <span className="text-gray-500 font-medium">Business</span>
+                  <span className="font-semibold text-brand-navy capitalize">{project.business.replace('-', ' ')}</span>
                 </li>
                 <li className="flex justify-between items-center">
                   <span className="text-gray-500 font-medium">Category</span>

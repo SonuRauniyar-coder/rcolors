@@ -89,13 +89,13 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="division" className="block text-sm font-medium text-gray-700 mb-2">Interested Division / Subject *</label>
-                <select id="division" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-sky focus:border-brand-sky outline-none transition-colors bg-white">
-                  <option value="">Select a division</option>
+                <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-2">Interested Business / Subject *</label>
+                <select id="business" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-sky focus:border-brand-sky outline-none transition-colors bg-white">
+                  <option value="">Select a business</option>
                   <option value="general">General Inquiry</option>
                   <option value="construction">Construction & Developers</option>
                   <option value="r-colors">R Colors Finishing Works</option>
-                  <option value="infratech">R Colors Infratech (Real Estate)</option>
+                  <option value="estate">R Colors Estate (Real Estate)</option>
                 </select>
               </div>
 

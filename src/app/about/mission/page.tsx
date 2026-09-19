@@ -53,13 +53,13 @@ export default function MissionVisionPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Integrity", desc: "We uphold the highest ethical standards in all our business dealings, ensuring transparency, honesty, and accountability across all divisions.", icon: Handshake },
+                { title: "Integrity", desc: "We uphold the highest ethical standards in all our business dealings, ensuring transparency, honesty, and accountability across all businesses.", icon: Handshake },
                 { title: "Quality Excellence", desc: "We are committed to delivering superior quality in construction, contracting, and infrastructure projects through skilled workmanship and strict quality control.", icon: Award },
-                { title: "Innovation", desc: "Through R Colors Infratech, we adopt modern engineering practices, advanced technologies, and innovative solutions to meet evolving industry needs.", icon: Lightbulb },
+                { title: "Innovation", desc: "Through R Colors Estate, we adopt modern engineering practices, advanced technologies, and innovative solutions to meet evolving industry needs.", icon: Lightbulb },
                 { title: "Safety", desc: "Safety is our top priority. We implement strict safety measures to ensure secure working environments for our employees, partners, and clients.", icon: ShieldCheck },
                 { title: "Client Commitment", desc: "We focus on understanding client requirements and delivering projects on time with complete satisfaction.", icon: MessageSquareCheck },
               ].map((value, idx) => (
-                <div key={idx} className="bg-brand-navy rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col">
+                <div key={idx} className="bg-brand-navy rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col">
                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4">
                     <value.icon className="w-6 h-6 text-brand-sky" />
                   </div>
@@ -67,7 +67,7 @@ export default function MissionVisionPage() {
                   <p className="text-gray-300 text-sm leading-relaxed">{value.desc}</p>
                 </div>
               ))}
-              <div className="bg-brand-sky rounded-lg shadow-md p-6 flex flex-col justify-center items-start text-white">
+              <div className="bg-brand-sky rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col justify-center items-start text-white">
                 <h3 className="font-heading font-bold text-lg md:text-xl mb-2">See it in action</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-4">Explore the projects built on these values.</p>
                 <Link href="/projects" className="inline-flex items-center gap-2 bg-white text-brand-navy font-semibold text-sm px-4 py-2 rounded-md hover:bg-gray-100 transition-colors">

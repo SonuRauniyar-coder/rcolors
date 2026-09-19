@@ -11,11 +11,11 @@ function ProjectsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   
-  const initialDivision = searchParams.get("division") || "all";
-  const [activeFilter, setActiveFilter] = useState(initialDivision);
+  const initialBusiness = searchParams.get("business") || "all";
+  const [activeFilter, setActiveFilter] = useState(initialBusiness);
 
   useEffect(() => {
-    setActiveFilter(searchParams.get("division") || "all");
+    setActiveFilter(searchParams.get("business") || "all");
   }, [searchParams]);
 
   const handleFilterChange = (filter: string) => {
@@ -23,19 +23,19 @@ function ProjectsContent() {
     if (filter === "all") {
       router.push("/projects", { scroll: false });
     } else {
-      router.push(`/projects?division=${filter}`, { scroll: false });
+      router.push(`/projects?business=${filter}`, { scroll: false });
     }
   };
 
   const filteredProjects = activeFilter === "all" 
     ? projectsData 
-    : projectsData.filter(p => p.division === activeFilter);
+    : projectsData.filter(p => p.business === activeFilter);
 
   const filters = [
     { id: "all", label: "All Projects" },
     { id: "construction", label: "Construction & Developers" },
     { id: "r-colors", label: "R Colors (Finishing)" },
-    { id: "infratech", label: "Infratech" }
+    { id: "estate", label: "Estate" }
   ];
 
   return (
@@ -79,7 +79,7 @@ function ProjectsContent() {
                   <div>
                     <h3 className="font-heading font-bold text-xl text-brand-navy mb-1">{project.name}</h3>
                     <div className="flex items-center text-gray-500 text-sm mb-4">
-                      <span className="capitalize">{project.division.replace('-', ' ')}</span>
+                      <span className="capitalize">{project.business.replace('-', ' ')}</span>
                       {project.location && (
                         <>
                           <span className="mx-2">•</span>
@@ -103,7 +103,7 @@ function ProjectsContent() {
             </div>
             <h3 className="text-2xl font-heading font-bold text-brand-navy mb-2">New Projects Coming Soon</h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              We are currently updating our portfolio for this division. Please contact us to discuss your specific requirements.
+              We are currently updating our portfolio for this business. Please contact us to discuss your specific requirements.
             </p>
             <Link href="/contact" className="inline-block mt-6 bg-brand-sky text-white px-6 py-2 rounded font-bold hover:bg-brand-navy transition-colors">
               Contact Us

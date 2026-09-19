@@ -46,17 +46,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8.3 Three Divisions Strip */}
-      <section id="divisions" className="w-full py-20 bg-gray-50 px-4">
+      {/* 8.3 Three Businesses Strip */}
+      <section id="businesses" className="w-full py-20 bg-gray-50 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-black text-brand-navy mb-4">OUR DIVISIONS</h2>
+            <h2 className="text-4xl font-heading font-black text-brand-navy mb-4">OUR BUSINESSES</h2>
             <div className="w-24 h-1 bg-brand-sky mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Division 1 */}
-            <Link href="/divisions/construction" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            {/* Business 1 */}
+            <Link href="/businesses/construction" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="h-64 relative bg-brand-navy/10 overflow-hidden">
                 <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
                 {/* Fallback pattern bg */}
@@ -70,8 +70,8 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Division 2 */}
-            <Link href="/divisions/r-colors" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            {/* Business 2 */}
+            <Link href="/businesses/r-colors" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="h-64 relative bg-brand-navy/10 overflow-hidden">
                 <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
                 <div className="absolute inset-0 bg-[url('/images/Rcolors1.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
@@ -84,15 +84,15 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Division 3 */}
-            <Link href="/divisions/infratech" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            {/* Business 3 */}
+            <Link href="/businesses/estate" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="h-64 relative bg-brand-navy/10 overflow-hidden">
                 <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
                 <div className="absolute inset-0 bg-[url('/images/Rcolors3.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
               </div>
               <div className="p-8 text-center flex-grow flex flex-col justify-center">
                 <div className="relative h-28 w-full mx-auto mb-3">
-                  <Image src="/images/logo3.jpg" alt="R Colors Infratech" fill className="object-contain" />
+                  <Image src="/images/logo3.jpg" alt="R Colors Estate" fill className="object-contain" />
                 </div>
                 {/* <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Real Estate & Sales Purchase</p> */}
               </div>
@@ -131,6 +131,12 @@ export default function Home() {
                 <h3 className="font-bold text-xl">Safety First</h3>
                 <p className="text-gray-300">We implement strict safety measures to ensure secure working environments for everyone.</p>
               </div>
+            </div>
+            <div className="mt-10">
+              <Link href="/why-us" className="inline-flex items-center space-x-2 bg-brand-sky text-white px-8 py-3 rounded font-bold hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                <span>Learn More About Us</span>
+                <ArrowRight size={18} />
+              </Link>
             </div>
           </div>
 
@@ -188,7 +194,7 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="font-heading font-bold text-xl text-brand-navy mb-1">{project.name}</h3>
                   <div className="flex items-center text-gray-500 text-sm mb-3">
-                    <span className="capitalize">{project.division.replace('-', ' ')}</span>
+                    <span className="capitalize">{project.business.replace('-', ' ')}</span>
                     {project.location && (
                       <>
                         <span className="mx-2">•</span>
@@ -254,7 +260,7 @@ export default function Home() {
           <p className="text-xl font-light opacity-90">
             Thank you for choosing R Colors Group of Companies. Your vision inspires our work, and your satisfaction remains our highest priority.
           </p>
-          <Link href="/contact" className="inline-block bg-brand-navy text-white px-10 py-4 rounded font-bold text-lg hover:bg-white hover:text-brand-navy transition-colors shadow-xl transform hover:-translate-y-1">
+          <Link href="/contact" className="inline-block bg-brand-navy text-white px-10 py-4 rounded font-bold text-lg hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-xl transform hover:-translate-y-1">
             Contact Us Today
           </Link>
         </div>

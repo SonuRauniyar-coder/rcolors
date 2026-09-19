@@ -8,11 +8,14 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [forceClose, setForceClose] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+
+  const handleMenuClick = () => {
+    setForceClose(true);
+  };
 
   useEffect(() => {
     if (!isHomePage) {
@@ -56,44 +59,36 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <nav className={`hidden md:flex items-center space-x-4 lg:space-x-6 font-semibold text-sm lg:text-base whitespace-nowrap mr-2 lg:mr-4 ${textColorClass}`}>
               {/* About Us Mega Menu Trigger */}
-              <div
-                className="relative group cursor-pointer"
-                onMouseEnter={() => setIsAboutOpen(true)}
-                onMouseLeave={() => setIsAboutOpen(false)}
-              >
-                <div className="flex items-center space-x-1 hover:text-brand-sky transition-colors">
+              <div className="relative group cursor-pointer py-4" onMouseLeave={() => setForceClose(false)}>
+                <div className="flex flex-col items-center group-hover:text-brand-sky transition-colors relative">
                   <Link href="/about">About Us</Link>
-                  <ChevronDown size={16} />
+                  <div className="absolute -bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-current"></div>
+                  </div>
                 </div>
                 {/* Mega Menu Dropdown */}
-                {isAboutOpen && (
-                  <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-b-lg border-t-2 border-brand-sky pt-2 pb-4 flex flex-col z-50 text-brand-navy">
-                    <Link href="/about" className="px-4 py-2 hover:bg-gray-100 hover:text-brand-sky transition-colors" onClick={() => setIsAboutOpen(false)}>About Company</Link>
-                    <Link href="/about/mission" className="px-4 py-2 hover:bg-gray-100 hover:text-brand-sky transition-colors" onClick={() => setIsAboutOpen(false)}>Mission and Vision</Link>
-                    <Link href="/about/clients" className="px-4 py-2 hover:bg-gray-100 hover:text-brand-sky transition-colors" onClick={() => setIsAboutOpen(false)}>Clients</Link>
-                  </div>
-                )}
+                <div className={`absolute top-[100%] left-0 w-64 bg-white shadow-2xl pt-4 pb-2 flex flex-col z-50 text-black opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ${forceClose ? '!opacity-0 !invisible' : ''}`}>
+                  <Link href="/about" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">About Company</Link>
+                  <Link href="/about/mission" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Mission & Vision</Link>
+                  <Link href="/about/clients" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Clients</Link>
+                </div>
               </div>
-              <Link href="/#why-us" className="hover:text-brand-sky transition-colors">Why Us</Link>
+              <Link href="/why-us" className="hover:text-brand-sky transition-colors py-4">Why Us</Link>
 
               {/* Mega Menu Trigger */}
-              <div
-                className="relative group cursor-pointer"
-                onMouseEnter={() => setIsDivisionsOpen(true)}
-                onMouseLeave={() => setIsDivisionsOpen(false)}
-              >
-                <div className="flex items-center space-x-1 hover:text-brand-sky transition-colors">
-                  <span>Divisions</span>
-                  <ChevronDown size={16} />
+              <div className="relative group cursor-pointer py-4" onMouseLeave={() => setForceClose(false)}>
+                <div className="flex flex-col items-center group-hover:text-brand-sky transition-colors relative">
+                  <span>Our Businesses</span>
+                  <div className="absolute -bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-current"></div>
+                  </div>
                 </div>
                 {/* Mega Menu Dropdown */}
-                {isDivisionsOpen && (
-                  <div className="absolute top-full right-0 w-64 bg-white shadow-lg rounded-b-lg border-t-2 border-brand-sky pt-2 pb-4 flex flex-col z-50 text-brand-navy">
-                    <Link href="/divisions/construction" className="px-4 py-2 hover:bg-gray-100 hover:text-brand-sky transition-colors">Construction & Developers</Link>
-                    <Link href="/divisions/r-colors" className="px-4 py-2 hover:bg-gray-100 hover:text-brand-sky transition-colors">R Colors (Finishing Works)</Link>
-                    <Link href="/divisions/infratech" className="px-4 py-2 hover:bg-gray-100 hover:text-brand-sky transition-colors">Infratech</Link>
-                  </div>
-                )}
+                <div className={`absolute top-[100%] left-0 w-[280px] bg-white shadow-2xl pt-4 pb-2 flex flex-col z-50 text-black opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ${forceClose ? '!opacity-0 !invisible' : ''}`}>
+                  <Link href="/businesses/construction" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Construction & Developers</Link>
+                  <Link href="/businesses/r-colors" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">R Colors (Finishing Works)</Link>
+                  <Link href="/businesses/estate" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Estate</Link>
+                </div>
               </div>
 
               <Link href="/projects" className="hover:text-brand-sky transition-colors">Projects</Link>
@@ -124,12 +119,12 @@ export default function Navbar() {
             <Link href="/about/mission" className="pl-4 py-2 hover:text-brand-sky font-normal text-sm" onClick={() => setIsMobileMenuOpen(false)}>Mission and Vision</Link>
             <Link href="/about/clients" className="pl-4 py-2 hover:text-brand-sky font-normal text-sm" onClick={() => setIsMobileMenuOpen(false)}>Clients</Link>
           </div>
-          <Link href="/#why-us" className="px-6 py-4 border-b text-brand-navy font-semibold hover:bg-gray-50" onClick={() => setIsMobileMenuOpen(false)}>Why Us</Link>
+          <Link href="/why-us" className="px-6 py-4 border-b text-brand-navy font-semibold hover:bg-gray-50" onClick={() => setIsMobileMenuOpen(false)}>Why Us</Link>
           <div className="px-6 py-4 border-b text-brand-navy font-semibold flex flex-col">
-            <span className="mb-2 text-gray-500 text-sm uppercase tracking-wider">Divisions</span>
-            <Link href="/divisions/construction" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>Construction & Developers</Link>
-            <Link href="/divisions/r-colors" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>R Colors (Finishing Works)</Link>
-            <Link href="/divisions/infratech" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>Infratech</Link>
+            <span className="mb-2 text-gray-500 text-sm uppercase tracking-wider">Businesses</span>
+            <Link href="/businesses/construction" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>Construction & Developers</Link>
+            <Link href="/businesses/r-colors" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>R Colors (Finishing Works)</Link>
+            <Link href="/businesses/estate" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>Estate</Link>
           </div>
           <Link href="/projects" className="px-6 py-4 border-b text-brand-navy font-semibold hover:bg-gray-50" onClick={() => setIsMobileMenuOpen(false)}>Projects</Link>
           {/* <Link href="/clients" className="px-6 py-4 border-b text-brand-navy font-semibold hover:bg-gray-50" onClick={() => setIsMobileMenuOpen(false)}>Clients</Link> */}

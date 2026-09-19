@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
+// finishing works, Sales & purchase , Beyond your imagination 
 const slides = [
   { image: "/images/home1.jpg", text: "R Colors Group Of Companies" },
-  { image: "/images/home2.jpg", text: "R Colors" },
-  { image: "/images/home3.jpg", text: "R Colors Construction and Developers" },
-  { image: "/images/home2.jpg", text: "R Colors Infratech" },
+  { image: "/images/home2.jpg", text: "R Colors Construction and Developers" },
+  { image: "/images/home3.jpg", text: "R Colors" },
+  { image: "/images/home4.jpg", text: "R Colors Estate" },
 ];
 
 export default function HeroSlider() {
