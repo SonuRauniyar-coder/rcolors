@@ -6,43 +6,49 @@ import PageHeader from "@/components/PageHeader";
 export default function AboutCompanyPage() {
   return (
     <div className="w-full">
-      <PageHeader 
-        titlePart1="ABOUT" 
-        titlePart2="US" 
+      <PageHeader
+        titlePart1="ABOUT"
+        titlePart2="US"
         subNavItems={[
           { name: 'About Company', href: '/about' },
           { name: 'Mission & Vision', href: '/about/mission' },
           { name: 'Clients', href: '/about/clients' },
-        ]} 
+        ]}
       />
 
-      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-12 px-4">
-        <div className="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg leading-relaxed">
-          <p>R Colors Group of Companies is a growing organization engaged in construction,
-            contracting, real estate development, and property solutions. With a strong commitment
-            to quality and professionalism, we focus on delivering reliable services that meet modern
-            industry standards and client expectations. Our work reflects a blend of innovation,
-            practical experience, and strong industry knowledge.
-          </p>
-          <p>
-            Our team combines technical expertise with practical experience to manage projects
-            efficiently from planning to completion. We believe in using quality materials, effective
-            project management, and skilled workmanship to ensure durable and successful
-            developments. Every project is executed with careful attention to detail, safety standards,
-            and structured planning.
-          </p>
-          <p>
-            At R Colors Group, we aim to build long-term relationships with our clients by maintaining
-            transparency, timely execution, and consistent performance. Our goal is to contribute to
-            modern infrastructure while creating value for communities and stakeholders. Through
-            continuous improvement and dedication, we strive to deliver projects that reflect
-            reliability and lasting quality.
-          </p>
-          <blockquote className="border-l-4 border-brand-sky pl-6 py-4 my-10 bg-gray-50 rounded-r-lg shadow-sm">
-            <p className="text-2xl italic font-heading text-brand-navy font-semibold">
-              &quot;At R Colors Group of Companies, we believe in building more than structures. We build trust, long-term relationships, and spaces that reflect quality, strength, and modern development.&quot;
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-6 md:px-12 lg:px-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-start">
+          <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+
+            <p>R Colors Group of Companies is a growing organization engaged in construction,
+              contracting, real estate development, and property solutions. With a strong commitment
+              to quality and professionalism, we focus on delivering reliable services that meet modern
+              industry standards and client expectations. Our work reflects a blend of innovation,
+              practical experience, and strong industry knowledge.
             </p>
-          </blockquote>
+            <p>
+              Our team combines technical expertise with practical experience to manage projects
+              efficiently from planning to completion. We believe in using quality materials, effective
+              project management, and skilled workmanship to ensure durable and successful
+              developments. Every project is executed with careful attention to detail, safety standards,
+              and structured planning.
+            </p>
+            <p>
+              At R Colors Group, we aim to build long-term relationships with our clients by maintaining
+              transparency, timely execution, and consistent performance. Our goal is to contribute to
+              modern infrastructure while creating value for communities and stakeholders. Through
+              continuous improvement and dedication, we strive to deliver projects that reflect
+              reliability and lasting quality.
+            </p>
+            <blockquote className="border-l-4 border-brand-sky pl-6 py-4 my-10 bg-gray-50 rounded-r-lg shadow-sm">
+              <p className="text-2xl italic font-heading text-brand-navy font-semibold">
+                &quot;At R Colors Group of Companies, we believe in building more than structures. We build trust, long-term relationships, and spaces that reflect quality, strength, and modern development.&quot;
+              </p>
+            </blockquote>
+          </div>
+          <div className="relative w-full h-[500px] lg:h-[850px] rounded-lg overflow-hidden shadow-2xl">
+            <Image src="/images/aboutus.jpg" alt="About R Colors Group" fill className="object-cover object-center" />
+          </div>
         </div>
       </section>
 

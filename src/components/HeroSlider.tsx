@@ -5,9 +5,9 @@ import Image from "next/image";
 // finishing works, Sales & purchase , Beyond your imagination 
 const slides = [
   { image: "/images/home1.jpg", text: "R Colors Group Of Companies", subtext: "Beyond your Imagination" },
-  { image: "/images/home2.jpg", text: "R Colors Construction and Developers" },
+  { image: "/images/home2.jpg", text: "R Colors Construction and Developers", subtext: "Building & Developement" },
   { image: "/images/home3.jpg", text: "R Colors", subtext: "Finishing Works" },
-  { image: "/images/home4.2.jpg", text: "R Colors Estate", subtext: "Sales and Purchase" },
+  { image: "/images/home4.1.jpg", text: "R Colors Estate", subtext: "Sales & Purchase" },
 ];
 
 export default function HeroSlider() {
