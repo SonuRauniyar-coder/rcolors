@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PaintRoller, Scissors, LayoutGrid, Droplet, Sofa, Zap, Wrench, Hammer, ArrowRight } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 
@@ -7,55 +8,63 @@ export default function RColorsFinishingPage() {
     {
       title: "Interior & Exterior Painting",
       desc: "We provide high-quality interior and exterior painting services for residential and commercial projects. Our finishes enhance both protection and visual appeal. Using premium materials and modern application techniques, we ensure smooth surfaces and long-lasting durability. Our team focuses on precision, surface preparation, and timely completion for flawless results.",
-      icon: PaintRoller
+      icon: PaintRoller,
+      image: "/images/Rcolors-1.jpg"
     },
     {
       title: "POP & Gypsum Work",
       desc: "We deliver elegant POP and gypsum solutions for ceilings and decorative interiors. Our designs enhance structural appeal while adding a refined and modern finish to every space. From false ceilings to customized patterns, we ensure accurate installation and clean finishing. Our team focuses on detailed craftsmanship, proper alignment, and durable materials to maintain long-term strength and aesthetic consistency.",
-      icon: Scissors
+      icon: Scissors,
+      image: "/images/Rcolors-2.jpg"
     },
     {
       title: "Tiles & Marble Installation",
       desc: "We specialize in precise tile and marble installation for floors and walls. Our work combines strength with refined finishing and elegant surface detailing. Our team ensures proper alignment, secure fitting, and smooth surface finishing. We focus on durability, neat execution, and long-lasting performance to achieve premium results. Every installation is carried out with careful planning and attention to detail.",
-      icon: LayoutGrid
+      icon: LayoutGrid,
+      image: "/images/Rcolors-3.jpg"
     },
     {
       title: "Waterproofing Solutions",
       desc: "We provide reliable waterproofing services to protect buildings from leakage and moisture damage. Our solutions increase structural lifespan. Using advanced materials and proven industry methods, we seal vulnerable areas effectively and precisely. Our approach ensures long-term protection and reduced future maintenance concerns.",
-      icon: Droplet
+      icon: Droplet,
+      image: "/images/Rcolors-4.jpg"
     },
     {
       title: "Furniture & Interior Work",
       desc: "We offer customized furniture and interior finishing solutions tailored to client requirements. Our work balances functionality and design. From modular units to complete interior setups, we use premium quality materials and skilled workmanship. We ensure long-term durability, smart space optimization, and elegant overall presentation.",
-      icon: Sofa
+      icon: Sofa,
+      image: "/images/Rcolors-5.jpg"
     },
     {
       title: "Electrical Services",
       desc: "We handle safe and efficient electrical installations for residential and commercial projects. Our systems ensure reliable performance. Our team follows proper wiring standards and safety protocols with strict quality supervision. We deliver structured planning and smooth execution for long-term operational safety and dependable functionality.",
-      icon: Zap
+      icon: Zap,
+      image: "/images/Rcolors-6.jpg"
     },
     {
       title: "Plumbing Services",
       desc: "We provide professional plumbing solutions for new construction and renovation projects. Our installations ensure efficient water flow and drainage. With careful planning and quality fittings, we prevent leakage and future maintenance issues effectively. Our work supports durability, safety standards, and seamless system functionality.",
-      icon: Wrench
+      icon: Wrench,
+      image: "/images/Rcolors-7.jpg"
     },
     {
       title: "Renovation & Repair Services",
       desc: "We offer renovation and repair solutions to upgrade and restore existing spaces. Our services improve structural strength and overall appearance. From surface corrections to complete refurbishment, we manage projects with precision and care at every stage. Our goal is to deliver enhanced value, improved functionality, and renewed durability.",
-      icon: Hammer
+      icon: Hammer,
+      image: "/images/Rcolors-8.jpg"
     }
   ];
 
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
-      <PageHeader 
-        titlePart1="OUR" 
-        titlePart2="BUSINESSES" 
+      <PageHeader
+        titlePart1="OUR"
+        titlePart2="BUSINESSES"
         subNavItems={[
           { name: 'Construction & Developers', href: '/businesses/construction' },
-          { name: 'R Colors (Finishing Works)', href: '/businesses/r-colors' },
+          { name: 'Finishing Works', href: '/businesses/r-colors' },
           { name: 'Estate', href: '/businesses/estate' },
-        ]} 
+        ]}
       />
 
       {/* Intro Copy */}
@@ -73,18 +82,25 @@ export default function RColorsFinishingPage() {
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (
-              <div key={idx} className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-                <div className="w-16 h-16 mb-6">
-                  {/* Hexagon shape using clip-path */}
-                  <div className="w-full h-full bg-brand-sky/10 flex items-center justify-center text-brand-sky group-hover:bg-brand-sky group-hover:text-white transition-colors" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
-                    <Icon size={28} />
+              <div key={idx} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1 overflow-hidden">
+                <div className="relative w-full h-56 overflow-hidden">
+                  <Image 
+                    src={service.image} 
+                    alt={service.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-brand-sky shadow-sm z-10 group-hover:bg-brand-sky group-hover:text-white transition-colors duration-300">
+                    <Icon size={24} />
                   </div>
                 </div>
-                <h3 className="font-heading font-bold text-xl text-brand-navy mb-4">{service.title}</h3>
-                <div className="text-gray-600 text-sm space-y-3 flex-grow">
-                  {service.desc.split('. ').map((sentence, i, arr) => (
-                    <p key={i}>{sentence}{i !== arr.length - 1 ? '.' : ''}</p>
-                  ))}
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="font-heading font-bold text-xl text-brand-navy mb-4 group-hover:text-brand-sky transition-colors duration-300">{service.title}</h3>
+                  <div className="text-gray-600 text-sm space-y-3 flex-grow">
+                    {service.desc.split('. ').map((sentence, i, arr) => (
+                      <p key={i}>{sentence}{i !== arr.length - 1 ? '.' : ''}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             );

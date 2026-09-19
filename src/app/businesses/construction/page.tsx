@@ -1,41 +1,38 @@
 import Link from "next/link";
-import { ArrowRight, Building, Home, HardHat, FileSignature } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 
 export default function ConstructionBusinessPage() {
   const services = [
     {
       title: "Residential Construction",
-      desc: "We build modern homes and housing projects with quality craftsmanship, safety, and long-term durability. We understand that a home is more than a structure, it is a reflection of lifestyle and aspirations. Our residential projects are executed with quality materials, efficient planning, and attention to detail to ensure durability and comfort.",
-      icon: Home
+      desc: "We build modern homes and housing projects with quality craftsmanship, safety, and long-term durability. We understand that a home is more than a structure, it is a reflection of lifestyle and aspirations. Our residential projects are executed with quality materials, efficient planning, and attention to detail to ensure durability and comfort."
     },
     {
       title: "Commercial Construction",
-      desc: "We develop strong and functional commercial spaces tailored to business growth and performance. We deliver commercial projects that combine functionality, strength, and modern design. From office buildings to retail spaces, our team ensures efficient planning and high standards to support business growth and performance.",
-      icon: Building
+      desc: "We develop strong and functional commercial spaces tailored to business growth and performance. We deliver commercial projects that combine functionality, strength, and modern design. From office buildings to retail spaces, our team ensures efficient planning and high standards to support business growth and performance."
     },
     {
       title: "Builder & Development",
-      desc: "We develop residential and commercial projects from land planning to construction. Our focus is on quality development and successful property delivery. Our team focuses on quality development, strong structures, and successful project delivery with efficient planning and professional execution.",
-      icon: HardHat
+      desc: "We develop residential and commercial projects from land planning to construction. Our focus is on quality development and successful property delivery. Our team focuses on quality development, strong structures, and successful project delivery with efficient planning and professional execution."
     },
     {
       title: "Project Management Consultancy (PMC)",
-      desc: "We provide professional planning, supervision, and coordination for construction projects, ensuring quality work and timely completion. Our PMC services ensure proper planning, supervision, and coordination throughout the construction process. We focus on quality standards, efficient execution, and timely completion of projects.",
-      icon: FileSignature
+      desc: "We provide professional planning, supervision, and coordination for construction projects, ensuring quality work and timely completion. Our PMC services ensure proper planning, supervision, and coordination throughout the construction process. We focus on quality standards, efficient execution, and timely completion of projects."
     }
   ];
 
   return (
     <main className="flex min-h-screen flex-col items-center pb-24">
-      <PageHeader 
-        titlePart1="OUR" 
-        titlePart2="BUSINESSES" 
+      <PageHeader
+        titlePart1="OUR"
+        titlePart2="BUSINESSES"
         subNavItems={[
           { name: 'Construction & Developers', href: '/businesses/construction' },
-          { name: 'R Colors (Finishing Works)', href: '/businesses/r-colors' },
+          { name: 'Finishing Works', href: '/businesses/r-colors' },
           { name: 'Estate', href: '/businesses/estate' },
-        ]} 
+        ]}
       />
 
       {/* Intro Copy */}
@@ -48,23 +45,16 @@ export default function ConstructionBusinessPage() {
       </section>
 
       {/* 4 Numbered Core Services */}
-      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-24 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto space-y-32 md:space-y-40">
 
           {services.map((service, idx) => {
-            const Icon = service.icon;
             return (
-              <div key={idx} className={`flex flex-col md:flex-row gap-8 md:gap-16 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+              <div key={idx} className={`flex flex-col md:flex-row gap-12 md:gap-24 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="w-full md:w-1/2 flex justify-center">
-                  <div className="relative w-64 h-64 flex items-center justify-center">
-                    {/* Big background number */}
-                    <div className="absolute inset-0 flex items-center justify-center font-heading font-black text-[180px] text-gray-200/50 -z-10 select-none">
-                      0{idx + 1}
-                    </div>
-                    {/* Icon wheel */}
-                    <div className="w-40 h-40 rounded-full bg-white shadow-2xl border-8 border-brand-navy flex items-center justify-center relative z-10">
-                      <div className="w-full h-full rounded-full border-4 border-dashed border-brand-sky flex items-center justify-center animate-[spin_60s_linear_infinite]"></div>
-                      <Icon size={64} className="text-brand-sky absolute" />
+                  <div className="relative w-full max-w-[300px] h-[250px] sm:max-w-[400px] sm:h-[320px] md:max-w-[500px] md:h-[450px] z-10 bg-white p-8 rounded-3xl shadow-xl">
+                    <div className="relative w-full h-full">
+                      <Image src="/images/logo.jpg" alt="Logo" fill className="object-contain" />
                     </div>
                   </div>
                 </div>

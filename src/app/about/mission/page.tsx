@@ -2,45 +2,64 @@
 
 import { Handshake, Award, Lightbulb, ShieldCheck, MessageSquareCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 
 export default function MissionVisionPage() {
   return (
     <div className="w-full">
-      <PageHeader 
-        titlePart1="MISSION &" 
-        titlePart2="VISION" 
+      <PageHeader
+        titlePart1="MISSION &"
+        titlePart2="VISION"
         subNavItems={[
           { name: 'About Company', href: '/about' },
           { name: 'Mission & Vision', href: '/about/mission' },
           { name: 'Clients', href: '/about/clients' },
-        ]} 
+        ]}
       />
 
-      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              letter: "M", title: "MISSION",
-              text: "At R Colors Group of Companies, our mission is to deliver excellence across construction, contracting, and infrastructure development. We are committed to transforming ideas into strong, sustainable structures that reflect quality and precision. With a focus on integrity, professionalism, and timely execution, we ensure every project meets the highest standards of safety and craftsmanship. Our goal is to exceed client expectations while creating long-term value for communities and stakeholders.",
-            },
-            {
-              letter: "V", title: "VISION",
-              text: "Our vision is to become a trusted leader in the construction and infrastructure industry through innovation, reliability, and sustainable practices. We aim to expand our presence while delivering projects that symbolize strength and modern engineering. We envision building spaces that inspire growth and contribute to economic development. Through continuous improvement and advanced solutions, we strive to shape a better and stronger future.",
-            },
-            {
-              letter: "P", title: "PURPOSE",
-              text: "At R Colors Group of Companies, our purpose is to create spaces that improve everyday living and support business growth. We focus on delivering construction and development solutions that combine quality, strength, and long-term value for our clients and communities.",
-            },
-          ].map((card) => (
-            <div key={card.letter} className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-sky hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-              <h3 className="text-2xl font-heading font-black text-brand-navy mb-4 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center text-base font-black shrink-0">{card.letter}</span>
-                {card.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-sm">{card.text}</p>
+      <section className="w-full py-20 px-4 bg-[#f4f4f4]">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+          <div className="text-center max-w-4xl mb-16" data-aos="fade-up">
+            <h3 className="text-2xl font-medium text-brand-navy mb-4">Mission</h3>
+            <h2 className="text-3xl md:text-4xl lg:text-3xl font-bold text-brand-navy leading-tight">
+              Building sustainable infrastructure with absolute precision, unmatched integrity, and superior craftsmanship.
+            </h2>
+          </div>
+
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center max-w-6xl">
+            <div className="relative h-[400px] lg:h-[600px] w-full" data-aos="fade-right">
+              <Image
+                src="/images/home4.3.jpg"
+                alt="Construction"
+                fill
+                className="object-cover"
+              />
             </div>
-          ))}
+            <div data-aos="fade-left" className="flex flex-col items-center lg:items-start justify-center space-y-6 lg:pl-6">
+              {/* Vision Card */}
+              <div className="bg-white p-6 md:p-8 w-full max-w-md shadow-sm">
+                <h3 className="text-lg md:text-xl font-medium text-brand-navy mb-2">Vision</h3>
+                <h2 className="text-lg md:text-xl font-black text-brand-navy leading-tight mb-3">
+                  Encompassing legacy of ethics and empowerment as makers to the nation.
+                </h2>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  We aim to lead construction and infrastructure through innovation, reliability, and sustainability, creating inspiring spaces, modern solutions, and lasting value for a stronger, smarter, and sustainable future.
+                </p>
+              </div>
+
+              {/* Purpose Card */}
+              <div className="bg-white p-6 md:p-8 w-full max-w-md shadow-sm">
+                <h3 className="text-lg md:text-xl font-medium text-brand-navy mb-2">Purpose</h3>
+                <h2 className="text-lg md:text-xl font-black text-brand-navy leading-tight mb-3">
+                  Creating spaces that improve everyday living and support business growth.
+                </h2>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  At R Colors Group of Companies, we create quality spaces that enhance living, drive business growth, and deliver strong, innovative, and lasting value for clients and communities.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

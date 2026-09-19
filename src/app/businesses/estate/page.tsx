@@ -43,7 +43,7 @@ export default function EstateBusinessPage() {
         titlePart2="BUSINESSES" 
         subNavItems={[
           { name: 'Construction & Developers', href: '/businesses/construction' },
-          { name: 'R Colors (Finishing Works)', href: '/businesses/r-colors' },
+          { name: 'Finishing Works', href: '/businesses/r-colors' },
           { name: 'Estate', href: '/businesses/estate' },
         ]} 
       />

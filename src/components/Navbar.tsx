@@ -45,8 +45,8 @@ export default function Navbar() {
         <div className="w-full px-4 md:px-6 lg:px-8 py-1.5 md:py-2 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-6 lg:gap-10 ml-4 md:ml-8 lg:ml-16">
-            <div className="relative w-[55px] h-[40px] -my-1.5 shrink-0">
-              <Image src="/images/icon.jpg" alt="R Colors Group Logo" fill className="rounded-md object-cover" />
+            <div className="relative w-[55px] h-[40px] -my-[10px] shrink-0">
+              <Image src="/images/icon.png" alt="R Colors Group Logo" fill className="rounded-md object-cover" />
             </div>
             <div className="hidden sm:block whitespace-nowrap text-3xl lg:text-4xl font-heading font-bold tracking-tight">
               <span className={logoRedClass}>R </span>
@@ -73,7 +73,7 @@ export default function Navbar() {
                   <Link href="/about/clients" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Clients</Link>
                 </div>
               </div>
-              <Link href="/why-us" className="hover:text-brand-sky transition-colors py-2">Why Us</Link>
+              {/* <Link href="/why-us" className="hover:text-brand-sky transition-colors py-2">Why Us</Link> */}
 
               {/* Mega Menu Trigger */}
               <div className="relative group cursor-pointer py-2" onMouseLeave={() => setForceClose(false)}>
@@ -86,7 +86,7 @@ export default function Navbar() {
                 {/* Mega Menu Dropdown */}
                 <div className={`absolute top-[100%] left-0 w-[280px] bg-white shadow-2xl pt-4 pb-2 flex flex-col z-50 text-black opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ${forceClose ? '!opacity-0 !invisible' : ''}`}>
                   <Link href="/businesses/construction" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Construction & Developers</Link>
-                  <Link href="/businesses/r-colors" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">R Colors (Finishing Works)</Link>
+                  <Link href="/businesses/r-colors" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Finishing Works</Link>
                   <Link href="/businesses/estate" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Estate</Link>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export default function Navbar() {
           <div className="px-6 py-4 border-b text-brand-navy font-semibold flex flex-col">
             <span className="mb-2 text-gray-500 text-sm uppercase tracking-wider">Businesses</span>
             <Link href="/businesses/construction" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>Construction & Developers</Link>
-            <Link href="/businesses/r-colors" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>R Colors (Finishing Works)</Link>
+            <Link href="/businesses/r-colors" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>Finishing Works</Link>
             <Link href="/businesses/estate" className="pl-4 py-2 hover:text-brand-sky" onClick={() => setIsMobileMenuOpen(false)}>Estate</Link>
           </div>
           <Link href="/projects" className="px-6 py-4 border-b text-brand-navy font-semibold hover:bg-gray-50" onClick={() => setIsMobileMenuOpen(false)}>Projects</Link>

@@ -38,28 +38,28 @@ export default function WhyUsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <Zap className="text-brand-sky mb-4" size={40} />,
-                title: "On-Time Delivery",
-                desc: "Every project is planned and executed efficiently to ensure completion within committed timelines. We value your time."
-              },
-              {
                 icon: <Award className="text-brand-sky mb-4" size={40} />,
-                title: "Quality Craftsmanship",
-                desc: "Our skilled team ensures high standards of workmanship with careful attention to every detail."
+                title: "Commitment to Excellence",
+                desc: "We are driven by a strong dedication to deliver superior results in every project. Our focus on precision and quality ensures lasting and reliable structures."
               },
               {
-                icon: <Users className="text-brand-sky mb-4" size={40} />,
-                title: "Client-Focused",
-                desc: "We work closely with clients to understand their needs and deliver customized construction solutions."
+                icon: <Zap className="text-brand-sky mb-4" size={40} />,
+                title: "On-Time Project Delivery",
+                desc: "We value your time. Every project is planned and executed efficiently to ensure completion within committed timelines."
               },
               {
                 icon: <Shield className="text-brand-sky mb-4" size={40} />,
-                title: "Safety First",
-                desc: "We implement strict safety measures to ensure secure working environments for everyone involved."
+                title: "Quality Craftsmanship",
+                desc: "Our skilled team and experienced professionals ensure high standards of workmanship with careful attention to every detail."
+              },
+              {
+                icon: <Users className="text-brand-sky mb-4" size={40} />,
+                title: "Client-Focused Approach",
+                desc: "Your vision is our priority. We work closely with clients to understand their needs and deliver customized construction solutions."
               }
             ].map((item, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-sky group"
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
@@ -79,7 +79,7 @@ export default function WhyUsPage() {
       <section className="w-full py-24 bg-brand-navy text-white px-4 relative overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-sky/10 transform skew-x-12 translate-x-1/4"></div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div data-aos="fade-right">
             <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Our Principles</h4>
@@ -104,7 +104,7 @@ export default function WhyUsPage() {
               ))}
             </div>
           </div>
-          
+
           <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-left">
             <Image
               src="/images/home2.jpg"

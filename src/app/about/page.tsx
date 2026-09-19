@@ -53,15 +53,15 @@ export default function AboutCompanyPage() {
       </section>
 
       {/* Director's Message */}
-      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-16 bg-gray-50 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-sky shrink-0 shadow-xl">
-            <Image src="/images/owner.jpg" alt="Raj Mani Singh - Founder & Director" width={300} height={300} className="w-full h-full object-cover" />
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 bg-gray-50 px-6 md:px-12 lg:px-16">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+          <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-brand-sky shrink-0 shadow-xl">
+            <Image src="/images/owner.jpg" alt="Raj Mani Singh - Founder & Director" width={500} height={500} className="w-full h-full object-cover" />
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 md:pl-8 lg:pl-12">
             <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Director&apos;s Message</h4>
             <h2 className="text-3xl font-heading font-bold text-brand-navy">Raj Mani Singh</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
               <p>
                 Progress for me has never been just a dream; it has always been a vision that turns into reality through dedication and continuous effort. With this belief, I founded R Colors Construction &amp; Developers in 2011, with the aim of contributing to the construction industry through quality work, integrity, and strong professional values.
               </p>

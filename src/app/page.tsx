@@ -7,6 +7,11 @@ import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   const clientImages = Array.from({ length: 22 }, (_, i) => i + 1);
+
+  // Randomize the images for the two sliding rows
+  const shuffledRow1 = [...clientImages].sort(() => Math.random() - 0.5);
+  const shuffledRow2 = [...clientImages].sort(() => Math.random() - 0.5);
+
   const featuredProjects = projects.slice(0, 6);
 
   return (
@@ -16,13 +21,14 @@ export default function Home() {
 
 
       {/* 8.4 & 8.5 Welcome & About Us */}
-      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-brand-sky/10 transform rotate-3 rounded-3xl -z-10"></div>
-            <Image src="/images/R Colors Company Profile Final (2)_page-0002.jpg" width={600} height={400} alt="About R Colors Group" className="rounded-2xl shadow-2xl object-cover" />
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-20 px-4 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-5 flex justify-start">
+            <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-gray-100">
+              <Image src="/images/welcome1.1.jpg" fill alt="About R Colors Group" className="object-cover" />
+            </div>
           </div>
-          <div className="space-y-6">
+          <div className="lg:col-span-7 space-y-6 lg:pl-8">
             <h4 className="text-brand-sky font-bold uppercase tracking-wider">Welcome To Our Business</h4>
             <h2 className="text-4xl font-heading font-black text-brand-navy">Building Strong Foundations</h2>
             <p className="text-gray-600 leading-relaxed text-lg">
@@ -51,6 +57,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-heading font-black text-brand-navy mb-4">OUR BUSINESSES</h2>
+            {/* skjljsldkjjlskjdjflksjdlfkj fsdjlkfjsdlkfjjajslkf */}
             <div className="w-24 h-1 bg-brand-sky mx-auto"></div>
           </div>
 
@@ -74,11 +81,11 @@ export default function Home() {
             <Link href="/businesses/r-colors" className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="h-64 relative bg-brand-navy/10 overflow-hidden">
                 <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
-                <div className="absolute inset-0 bg-[url('/images/Rcolors1.png')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
+                <div className="absolute inset-0 bg-[url('/images/Rcolors1.jpg')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
               </div>
               <div className="p-8 text-center flex-grow flex flex-col justify-center">
-                <div className="relative h-28 w-full mx-auto mb-3">
-                  <Image src="/images/logo.jpg" alt="R Colors" fill className="object-contain" />
+                <div className="relative h-28 w-[90%] mx-auto mb-3">
+                  <Image src="/images/logo1.jpeg" alt="R Colors" fill className="object-contain" />
                 </div>
                 {/* <p className="text-brand-sky font-semibold uppercase tracking-wider text-sm">Finishing Works</p> */}
               </div>
@@ -108,28 +115,28 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Why Choose Us</h4>
-            <h2 className="text-4xl font-heading font-black mb-12">Commitment To Excellence</h2>
+            {/* <h4 className="text-brand-sky font-bold uppercase tracking-wider mb-2">Why Choose Us</h4> */}
+            <h2 className="text-4xl font-heading font-black mb-12">Why Choose Us</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="flex flex-col space-y-3">
                 <CheckCircle className="text-brand-sky" size={32} />
-                <h3 className="font-bold text-xl">On-Time Delivery</h3>
-                <p className="text-gray-300">Every project is planned and executed efficiently to ensure completion within committed timelines.</p>
+                <h3 className="font-bold text-xl">Commitment to Excellence</h3>
+                <p className="text-gray-300">We are driven by a strong dedication to deliver superior results in every project. Our focus on precision and quality ensures lasting and reliable structures.</p>
+              </div>
+              <div className="flex flex-col space-y-3">
+                <CheckCircle className="text-brand-sky" size={32} />
+                <h3 className="font-bold text-xl">On-Time Project Delivery</h3>
+                <p className="text-gray-300">We value your time. Every project is planned and executed efficiently to ensure completion within committed timelines.</p>
               </div>
               <div className="flex flex-col space-y-3">
                 <CheckCircle className="text-brand-sky" size={32} />
                 <h3 className="font-bold text-xl">Quality Craftsmanship</h3>
-                <p className="text-gray-300">Our skilled team ensures high standards of workmanship with careful attention to every detail.</p>
+                <p className="text-gray-300">Our skilled team and experienced professionals ensure high standards of workmanship with careful attention to every detail.</p>
               </div>
               <div className="flex flex-col space-y-3">
                 <CheckCircle className="text-brand-sky" size={32} />
                 <h3 className="font-bold text-xl">Client-Focused Approach</h3>
-                <p className="text-gray-300">We work closely with clients to understand their needs and deliver customized construction solutions.</p>
-              </div>
-              <div className="flex flex-col space-y-3">
-                <CheckCircle className="text-brand-sky" size={32} />
-                <h3 className="font-bold text-xl">Safety First</h3>
-                <p className="text-gray-300">We implement strict safety measures to ensure secure working environments for everyone.</p>
+                <p className="text-gray-300">Your vision is our priority. We work closely with clients to understand their needs and deliver customized construction solutions.</p>
               </div>
             </div>
             <div className="mt-10">
@@ -224,7 +231,7 @@ export default function Home() {
           <div className="relative w-full overflow-hidden max-w-full group py-4">
             {/* First Row - Sliding Left */}
             <div className="flex w-max animate-marquee-left group-hover:[animation-play-state:paused] mb-6 gap-6 pl-6">
-              {[...clientImages, ...clientImages, ...clientImages].map((imgNum, idx) => (
+              {[...shuffledRow1, ...shuffledRow1, ...shuffledRow1].map((imgNum, idx) => (
                 <div
                   key={`row1-${imgNum}-${idx}`}
                   className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
@@ -238,7 +245,7 @@ export default function Home() {
 
             {/* Second Row - Sliding Right */}
             <div className="flex w-max animate-marquee-right group-hover:[animation-play-state:paused] gap-6 pl-6">
-              {[...clientImages, ...clientImages, ...clientImages].map((imgNum, idx) => (
+              {[...shuffledRow2, ...shuffledRow2, ...shuffledRow2].map((imgNum, idx) => (
                 <div
                   key={`row2-${imgNum}-${idx}`}
                   className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center h-36 w-60 hover:shadow-lg transition-all duration-300 flex-shrink-0"
