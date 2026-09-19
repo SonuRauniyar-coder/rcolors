@@ -42,10 +42,10 @@ export default function Navbar() {
     <header className={`w-full z-50 transition-all duration-300 ${headerPosClass} ${headerBgClass}`}>
       {/* Main Header */}
       <div>
-        <div className="w-full px-4 md:px-6 lg:px-8 py-3 flex justify-between items-center">
+        <div className="w-full px-4 md:px-6 lg:px-8 py-1.5 md:py-2 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-6 lg:gap-10 ml-4 md:ml-8 lg:ml-16">
-            <div className="relative w-[70px] h-[50px] -my-3 shrink-0">
+            <div className="relative w-[55px] h-[40px] -my-1.5 shrink-0">
               <Image src="/images/icon.jpg" alt="R Colors Group Logo" fill className="rounded-md object-cover" />
             </div>
             <div className="hidden sm:block whitespace-nowrap text-3xl lg:text-4xl font-heading font-bold tracking-tight">
@@ -59,7 +59,7 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <nav className={`hidden md:flex items-center space-x-6 lg:space-x-10 font-semibold text-sm lg:text-base whitespace-nowrap mr-6 lg:mr-10 ${textColorClass}`}>
               {/* About Us Mega Menu Trigger */}
-              <div className="relative group cursor-pointer py-4" onMouseLeave={() => setForceClose(false)}>
+              <div className="relative group cursor-pointer py-2" onMouseLeave={() => setForceClose(false)}>
                 <div className="flex flex-col items-center group-hover:text-brand-sky transition-colors relative">
                   <Link href="/about">About Us</Link>
                   <div className="absolute -bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -73,10 +73,10 @@ export default function Navbar() {
                   <Link href="/about/clients" onClick={handleMenuClick} className="px-6 py-3 hover:text-brand-sky transition-colors text-[15px] font-medium">Clients</Link>
                 </div>
               </div>
-              <Link href="/why-us" className="hover:text-brand-sky transition-colors py-4">Why Us</Link>
+              <Link href="/why-us" className="hover:text-brand-sky transition-colors py-2">Why Us</Link>
 
               {/* Mega Menu Trigger */}
-              <div className="relative group cursor-pointer py-4" onMouseLeave={() => setForceClose(false)}>
+              <div className="relative group cursor-pointer py-2" onMouseLeave={() => setForceClose(false)}>
                 <div className="flex flex-col items-center group-hover:text-brand-sky transition-colors relative">
                   <span>Our Businesses</span>
                   <div className="absolute -bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
