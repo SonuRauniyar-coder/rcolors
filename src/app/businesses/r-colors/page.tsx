@@ -19,7 +19,7 @@ export default function RColorsFinishingPage() {
     },
     {
       title: "Tiles & Marble Installation",
-      desc: "We specialize in precise tile and marble installation for floors and walls. Our work combines strength with refined finishing and elegant surface detailing. Our team ensures proper alignment, secure fitting, and smooth surface finishing. We focus on durability, neat execution, and long-lasting performance to achieve premium results. Every installation is carried out with careful planning and attention to detail.",
+      desc: "We specialize in precise tile and marble installation for floors and walls. Our work combines strength with refined finishing and elegant surface detailing. Our team ensures proper alignment, secure fitting, and smooth surface finishing. We focus on durability, neat execution, and long-lasting performance to achieve premium results.",
       icon: LayoutGrid,
       image: "/images/Rcolors-3.jpg"
     },
@@ -84,11 +84,11 @@ export default function RColorsFinishingPage() {
             return (
               <div key={idx} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1 overflow-hidden">
                 <div className="relative w-full h-56 overflow-hidden">
-                  <Image 
-                    src={service.image} 
-                    alt={service.title} 
-                    fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-brand-sky shadow-sm z-10 group-hover:bg-brand-sky group-hover:text-white transition-colors duration-300">
                     <Icon size={24} />
