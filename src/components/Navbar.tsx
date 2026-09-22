@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="w-full px-4 md:px-6 lg:px-8 py-1.5 md:py-2 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-6 lg:gap-10 ml-4 md:ml-8 lg:ml-16">
-            <div className="relative w-[55px] h-[40px] -my-[10px] shrink-0">
+            <div className="relative w-[85px] h-[60px] -my-[20px] shrink-0">
               <Image src="/images/icon.png" alt="R Colors Group Logo" fill className="rounded-md object-cover" />
             </div>
             <div className="hidden sm:block whitespace-nowrap text-3xl lg:text-4xl font-heading font-bold tracking-tight">

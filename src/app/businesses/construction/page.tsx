@@ -7,19 +7,23 @@ export default function ConstructionBusinessPage() {
   const services = [
     {
       title: "Residential Construction",
-      desc: "We build modern homes and housing projects with quality craftsmanship, safety, and long-term durability. We understand that a home is more than a structure, it is a reflection of lifestyle and aspirations. Our residential projects are executed with quality materials, efficient planning, and attention to detail to ensure durability and comfort."
+      desc: "We build modern homes and housing projects with quality craftsmanship, safety, and long-term durability. We understand that a home is more than a structure, it is a reflection of lifestyle and aspirations. Our residential projects are executed with quality materials, efficient planning, and attention to detail to ensure durability and comfort.",
+      image: "/images/cd01.jpg"
     },
     {
       title: "Commercial Construction",
-      desc: "We develop strong and functional commercial spaces tailored to business growth and performance. We deliver commercial projects that combine functionality, strength, and modern design. From office buildings to retail spaces, our team ensures efficient planning and high standards to support business growth and performance."
+      desc: "We develop strong and functional commercial spaces tailored to business growth and performance. We deliver commercial projects that combine functionality, strength, and modern design. From office buildings to retail spaces, our team ensures efficient planning and high standards to support business growth and performance.",
+      image: "/images/cd02.jpg"
     },
     {
       title: "Builder & Development",
-      desc: "We develop residential and commercial projects from land planning to construction. Our focus is on quality development and successful property delivery. Our team focuses on quality development, strong structures, and successful project delivery with efficient planning and professional execution."
+      desc: "We develop residential and commercial projects from land planning to construction. Our focus is on quality development and successful property delivery. Our team focuses on quality development, strong structures, and successful project delivery with efficient planning and professional execution.",
+      image: "/images/cd03.jpg"
     },
     {
       title: "Project Management Consultancy (PMC)",
-      desc: "We provide professional planning, supervision, and coordination for construction projects, ensuring quality work and timely completion. Our PMC services ensure proper planning, supervision, and coordination throughout the construction process. We focus on quality standards, efficient execution, and timely completion of projects."
+      desc: "We provide professional planning, supervision, and coordination for construction projects, ensuring quality work and timely completion. Our PMC services ensure proper planning, supervision, and coordination throughout the construction process. We focus on quality standards, efficient execution, and timely completion of projects.",
+      image: "/images/cd04.jpg"
     }
   ];
 
@@ -45,17 +49,15 @@ export default function ConstructionBusinessPage() {
       </section>
 
       {/* 4 Numbered Core Services */}
-      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-24 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto space-y-32 md:space-y-40">
+      <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-24 px-4 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-32 md:space-y-40 relative z-10">
 
           {services.map((service, idx) => {
             return (
               <div key={idx} className={`flex flex-col md:flex-row gap-12 md:gap-24 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                <div className="w-full md:w-1/2 flex justify-center">
-                  <div className="relative w-full max-w-[300px] h-[250px] sm:max-w-[400px] sm:h-[320px] md:max-w-[500px] md:h-[450px] z-10 bg-white p-8 rounded-3xl shadow-xl">
-                    <div className="relative w-full h-full">
-                      <Image src="/images/logo.jpg" alt="Logo" fill className="object-contain" />
-                    </div>
+                <div className="w-full md:w-1/2 flex justify-center group">
+                  <div className="relative w-full max-w-[300px] h-[250px] sm:max-w-[400px] sm:h-[320px] md:max-w-[500px] md:h-[450px] z-10 overflow-hidden shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 bg-gray-200">
+                    <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                 </div>
 

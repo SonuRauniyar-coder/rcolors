@@ -30,7 +30,7 @@ export default function MissionVisionPage() {
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center max-w-6xl">
             <div className="relative h-[400px] lg:h-[600px] w-full" data-aos="fade-right">
               <Image
-                src="/images/home4.3.jpg"
+                src="/images/mission.jpg"
                 alt="Construction"
                 fill
                 className="object-cover"
