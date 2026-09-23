@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-brand-navy text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Brand Col */}
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4" data-aos="fade-up" data-aos-duration="1000">
           <div className="flex items-center gap-3">
             <div className="font-heading font-black text-2xl text-white">
               <span className="text-brand-red">R Colors</span> Group of Companies
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1200">
           <h4 className="font-heading font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-brand-sky">
             Quick Links
           </h4>
@@ -42,20 +42,20 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Divisions */}
-        <div>
+        {/* Businesses */}
+        <div data-aos="fade-up" data-aos-duration="1400">
           <h4 className="font-heading font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-brand-sky">
-            Our Divisions
+            Our Businesses
           </h4>
           <ul className="space-y-3 text-gray-300">
-            <li><Link href="/divisions/construction" className="hover:text-brand-sky transition-colors">Construction & Developers</Link></li>
-            <li><Link href="/divisions/r-colors" className="hover:text-brand-sky transition-colors">R Colors Finishing Works</Link></li>
-            <li><Link href="/divisions/infratech" className="hover:text-brand-sky transition-colors">R Colors Infratech</Link></li>
+            <li><Link href="/businesses/construction" className="hover:text-brand-sky transition-colors">Construction & Developers</Link></li>
+            <li><Link href="/businesses/r-colors" className="hover:text-brand-sky transition-colors">R Colors Finishing Works</Link></li>
+            <li><Link href="/businesses/estate" className="hover:text-brand-sky transition-colors">R Colors Estate</Link></li>
           </ul>
         </div>
 
         {/* Contact Info */}
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1600">
           <h4 className="font-heading font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-brand-sky">
             Contact Info
           </h4>
