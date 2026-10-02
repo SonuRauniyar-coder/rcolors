@@ -50,7 +50,7 @@ export default function ConstructionBusinessPage() {
 
       {/* 4 Numbered Core Services */}
       <section data-aos="fade-up" data-aos-duration="1000" className="w-full py-24 px-4 bg-gray-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-32 md:space-y-40 relative z-10">
+        <div className="max-w-7xl mx-auto space-y-12 md:space-y-16 relative z-10">
 
           {services.map((service, idx) => {
             return (

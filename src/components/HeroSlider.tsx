@@ -54,7 +54,7 @@ export default function HeroSlider() {
       <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none"></div>
 
       {/* Bottom Left Text */}
-      <div className="absolute bottom-12 left-4 md:left-12 lg:left-24 z-20 w-[90%] md:max-w-4xl h-32 md:h-48 flex items-end">
+      <div className="absolute bottom-16 left-4 md:left-12 lg:left-24 z-20 w-[90%] md:max-w-4xl flex items-end">
         {slides.map((slide, index) => {
           const isActive = index === current;
           return (
@@ -65,11 +65,11 @@ export default function HeroSlider() {
                 : "opacity-0 translate-y-8 pointer-events-none"
                 }`}
             >
-              <h1 className="text-4xl md:text-6xl ml-12 md:ml-20 lg:ml-30 lg:text-7xl font-heading font-light text-white tracking-wide drop-shadow-lg leading-tight md:leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white tracking-wide drop-shadow-lg leading-tight md:leading-tight">
                 {slide.text}
               </h1>
               {slide.subtext && (
-                <p className="mt-2 md:mt-4 ml-15 md:ml-24 lg:ml-31 pl-3 md:pl-4 border-l-[3px] border-white/80 text-lg md:text-xl lg:text-2xl text-gray-200 font-light tracking-widest drop-shadow-md">
+                <p className="mt-3 md:mt-4 pl-4 border-l-4 border-brand-sky text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 font-medium tracking-widest drop-shadow-md">
                   {slide.subtext}
                 </p>
               )}
